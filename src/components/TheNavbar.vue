@@ -1,0 +1,65 @@
+<template>
+  <header class="sticky top-0 z-50 border-b border-border/40 bg-background/75 backdrop-blur-xl">
+    <div class="mx-auto flex h-16 max-w-7xl items-center justify-between px-6 lg:px-8">
+
+      <!-- Logo -->
+      <a href="/" class="flex items-center gap-2.5 group">
+        <div class="flex h-8 w-8 items-center justify-center rounded-lg bg-primary text-primary-foreground shadow-lg shadow-primary/30 transition-transform group-hover:scale-105">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+            <path d="M3 4h10M3 8h7M3 12h5" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <span class="font-display text-[17px] font-semibold tracking-tight">Veerify</span>
+      </a>
+
+      <!-- Nav links -->
+      <nav class="hidden items-center gap-7 md:flex" aria-label="Main navigation">
+        <a href="#features" class="text-sm text-muted-foreground transition-colors hover:text-foreground">Features</a>
+        <a href="#how-it-works" class="text-sm text-muted-foreground transition-colors hover:text-foreground">How it works</a>
+        <a href="#pricing" class="text-sm text-muted-foreground transition-colors hover:text-foreground">Pricing</a>
+      </nav>
+
+      <!-- Right side -->
+      <div class="flex items-center gap-3">
+        <!-- Dark mode toggle -->
+        <button
+          @click="$emit('toggle-dark')"
+          class="flex h-9 w-9 items-center justify-center rounded-lg border border-border text-muted-foreground transition-colors hover:border-border/60 hover:text-foreground"
+          :aria-label="isDark ? 'Switch to light mode' : 'Switch to dark mode'"
+        >
+          <svg v-if="isDark" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"/>
+            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/>
+          </svg>
+          <svg v-else width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          </svg>
+        </button>
+
+        <a
+          href="https://app.veerify.io/login"
+          class="hidden text-sm text-muted-foreground transition-colors hover:text-foreground sm:block"
+        >
+          Sign in
+        </a>
+        <a
+          href="https://app.veerify.io"
+          class="inline-flex h-9 items-center justify-center rounded-lg bg-primary px-4 text-sm font-medium text-primary-foreground shadow-md shadow-primary/20 transition-all hover:opacity-90"
+        >
+          Get started free
+        </a>
+      </div>
+    </div>
+  </header>
+</template>
+
+<script setup>
+defineProps({
+  isDark: {
+    type: Boolean,
+    required: true,
+  },
+})
+
+defineEmits(['toggle-dark'])
+</script>

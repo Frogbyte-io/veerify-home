@@ -1,0 +1,54 @@
+<template>
+  <section id="how-it-works" class="border-t border-border/50 py-28">
+    <div class="mx-auto max-w-7xl px-6 lg:px-8">
+
+      <div class="mb-16 text-center">
+        <p class="mb-3 text-xs font-semibold uppercase tracking-[0.15em] text-primary">How it works</p>
+        <h2 class="font-display text-4xl font-bold tracking-tight lg:text-5xl">
+          From signal to shipped<br />in three steps.
+        </h2>
+      </div>
+
+      <div class="relative grid grid-cols-1 gap-8 lg:grid-cols-3 lg:gap-12">
+        <!-- Connector line (desktop only) -->
+        <div
+          class="pointer-events-none absolute top-10 hidden h-px bg-gradient-to-r from-transparent via-border to-transparent lg:block"
+          style="left: calc(16.666% + 40px); right: calc(16.666% + 40px);"
+          aria-hidden="true"
+        ></div>
+
+        <div
+          v-for="step in steps"
+          :key="step.number"
+          class="relative text-center lg:text-left"
+        >
+          <div class="relative mx-auto mb-6 flex h-20 w-20 items-center justify-center rounded-2xl border border-border bg-card shadow-sm lg:mx-0">
+            <span class="font-display text-[2rem] font-bold leading-none text-primary">{{ step.number }}</span>
+          </div>
+          <h3 class="mb-3 text-xl font-semibold">{{ step.title }}</h3>
+          <p class="leading-relaxed text-muted-foreground">{{ step.desc }}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</template>
+
+<script setup>
+const steps = [
+  {
+    number: '01',
+    title: 'Collect',
+    desc: 'Add Veerify to your app in minutes or share a public link. Start receiving structured feedback from users from day one.',
+  },
+  {
+    number: '02',
+    title: 'Prioritize',
+    desc: 'Users vote, you decide. A clear signal-to-noise ratio means you always know what to build next — and what to skip.',
+  },
+  {
+    number: '03',
+    title: 'Deliver',
+    desc: 'Ship it, update your roadmap, and notify users automatically. The feedback loop closes. Trust compounds.',
+  },
+]
+</script>

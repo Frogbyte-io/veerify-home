@@ -1,0 +1,223 @@
+<template>
+  <section class="relative overflow-hidden pb-24 pt-20 lg:pt-28">
+
+    <!-- Background grid -->
+    <div class="hero-grid pointer-events-none absolute inset-0 opacity-[0.035]" aria-hidden="true"></div>
+
+    <!-- Ambient glow -->
+    <div
+      class="pointer-events-none absolute -top-40 left-1/2 h-[700px] w-[700px] -translate-x-1/2 rounded-full bg-primary/15 blur-[140px]"
+      aria-hidden="true"
+    ></div>
+
+    <div class="relative mx-auto max-w-7xl px-6 lg:px-8">
+      <div class="grid grid-cols-1 gap-16 lg:grid-cols-[1fr_420px] xl:grid-cols-[1fr_480px] lg:items-center">
+
+        <!-- Left: Text content -->
+        <div>
+
+          <!-- Beta pill -->
+          <div class="hero-anim-1 mb-8 inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-4 py-1.5">
+            <span class="relative flex h-2 w-2">
+              <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary opacity-60"></span>
+              <span class="relative inline-flex h-2 w-2 rounded-full bg-primary"></span>
+            </span>
+            <span class="text-xs font-medium text-primary">Open beta — free forever</span>
+          </div>
+
+          <!-- Headline -->
+          <h1 class="hero-anim-2 font-display text-5xl font-bold leading-[1.05] tracking-tight lg:text-[3.75rem] xl:text-[4.5rem]">
+            Feedback<br />
+            <em class="italic text-primary">that actually</em><br />
+            ships features.
+          </h1>
+
+          <!-- Subtext -->
+          <p class="hero-anim-3 mt-6 max-w-[440px] text-lg leading-relaxed text-muted-foreground">
+            Veerify helps product teams collect, prioritize, and act on user feedback — so you always build the right thing next.
+          </p>
+
+          <!-- CTAs -->
+          <div class="hero-anim-4 mt-10 flex flex-wrap items-center gap-4">
+            <a
+              href="https://app.veerify.io"
+              class="inline-flex h-12 items-center justify-center gap-2 rounded-xl bg-primary px-8 text-sm font-semibold text-primary-foreground shadow-xl shadow-primary/30 transition-all hover:opacity-90 hover:-translate-y-0.5"
+            >
+              Start for free
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </a>
+            <a
+              href="#how-it-works"
+              class="inline-flex h-12 items-center justify-center rounded-xl border border-border px-8 text-sm font-medium text-foreground transition-all hover:bg-secondary"
+            >
+              See how it works
+            </a>
+          </div>
+
+          <!-- Trust signals -->
+          <div class="hero-anim-5 mt-10 flex flex-wrap gap-x-6 gap-y-2">
+            <span v-for="signal in trustSignals" :key="signal" class="flex items-center gap-1.5 text-xs text-muted-foreground">
+              <svg class="h-3.5 w-3.5 shrink-0 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M20 6L9 17l-5-5"/>
+              </svg>
+              {{ signal }}
+            </span>
+          </div>
+        </div>
+
+        <!-- Right: Product mockup -->
+        <div class="hero-anim-6 flex justify-center lg:justify-end">
+          <div class="relative w-full max-w-[420px]">
+
+            <!-- Floating glow behind card -->
+            <div class="absolute inset-8 rounded-2xl bg-primary/10 blur-2xl"></div>
+
+            <!-- Browser chrome -->
+            <div class="relative overflow-hidden rounded-2xl border border-border/60 bg-card shadow-2xl shadow-black/40">
+
+              <!-- Window bar -->
+              <div class="flex h-10 items-center border-b border-border/50 bg-card/80 px-4">
+                <div class="flex items-center gap-1.5">
+                  <div class="h-2.5 w-2.5 rounded-full bg-destructive/50"></div>
+                  <div class="h-2.5 w-2.5 rounded-full bg-chart-4/50"></div>
+                  <div class="h-2.5 w-2.5 rounded-full bg-chart-2/50"></div>
+                </div>
+                <div class="ml-4 flex-1">
+                  <div class="mx-auto flex h-[22px] max-w-[200px] items-center justify-center rounded-md bg-secondary/80 px-3">
+                    <span class="text-[10px] text-muted-foreground">app.veerify.io</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- App content -->
+              <div class="p-4">
+
+                <!-- Mini header -->
+                <div class="mb-4 flex items-center justify-between">
+                  <span class="text-sm font-semibold">All Feedback</span>
+                  <span class="rounded-full bg-secondary px-2.5 py-0.5 text-[11px] text-muted-foreground">
+                    {{ feedbackCards.length }} items
+                  </span>
+                </div>
+
+                <!-- Filter chips -->
+                <div class="mb-3 flex flex-wrap gap-1.5">
+                  <span
+                    v-for="chip in ['All', 'Feature', 'Bug', 'Idea']"
+                    :key="chip"
+                    class="cursor-pointer rounded-full px-2.5 py-0.5 text-[10px] font-medium transition-colors"
+                    :class="chip === 'All' ? 'bg-primary text-primary-foreground' : 'bg-secondary text-muted-foreground hover:text-foreground'"
+                  >{{ chip }}</span>
+                </div>
+
+                <!-- Feedback cards -->
+                <div class="space-y-2">
+                  <div
+                    v-for="(card, i) in feedbackCards"
+                    :key="card.text"
+                    class="mockup-card rounded-xl border border-border/60 bg-background/60 p-3 transition-colors hover:bg-secondary/20"
+                    :style="{ animationDelay: `${0.3 + i * 0.12}s` }"
+                  >
+                    <div class="flex items-start gap-3">
+                      <div class="min-w-0 flex-1">
+                        <div class="mb-1 flex flex-wrap items-center gap-1.5">
+                          <span
+                            class="rounded-md px-1.5 py-0.5 text-[9px] font-semibold uppercase tracking-wide"
+                            :class="tagClass(card.tag)"
+                          >{{ card.tag }}</span>
+                          <span
+                            class="rounded-full px-1.5 py-0.5 text-[9px]"
+                            :class="statusClass(card.status)"
+                          >{{ card.status }}</span>
+                        </div>
+                        <p class="text-[11px] font-medium leading-snug text-foreground">{{ card.text }}</p>
+                      </div>
+                      <div class="flex shrink-0 flex-col items-center gap-0.5">
+                        <button class="flex h-5 w-5 items-center justify-center rounded-md text-muted-foreground transition-colors hover:bg-secondary hover:text-primary">
+                          <svg class="h-2.5 w-2.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M18 15l-6-6-6 6"/>
+                          </svg>
+                        </button>
+                        <span class="tabular-nums text-[10px] font-bold text-foreground">{{ card.votes }}</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Floating notification badge -->
+            <div class="absolute -bottom-3 -right-3 flex items-center gap-2 rounded-xl border border-border bg-card px-3 py-2 shadow-xl shadow-black/20">
+              <div class="h-2 w-2 rounded-full bg-chart-2 ring-2 ring-chart-2/30"></div>
+              <span class="text-[11px] font-medium">New vote: Slack integration</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</template>
+
+<script setup>
+const trustSignals = [
+  'Free forever during beta',
+  'Unlimited projects',
+  '5-minute setup',
+]
+
+const feedbackCards = [
+  { tag: 'Feature', text: 'Dark mode support', votes: 47, status: 'Planned' },
+  { tag: 'Bug', text: 'CSV export broken on Safari', votes: 12, status: 'In progress' },
+  { tag: 'Feature', text: 'Slack integration', votes: 89, status: 'Planned' },
+  { tag: 'Idea', text: 'Monthly digest email', votes: 31, status: 'Under review' },
+  { tag: 'Feature', text: 'API access for enterprise', votes: 63, status: 'Planned' },
+]
+
+function tagClass(tag) {
+  return {
+    Feature: 'bg-primary/15 text-primary',
+    Bug: 'bg-destructive/15 text-destructive',
+    Idea: 'bg-chart-2/15 text-chart-2',
+  }[tag] ?? 'bg-secondary text-muted-foreground'
+}
+
+function statusClass(status) {
+  return {
+    Planned: 'bg-chart-4/15 text-chart-4',
+    'In progress': 'bg-chart-2/15 text-chart-2',
+    'Under review': 'bg-secondary text-muted-foreground',
+  }[status] ?? 'bg-secondary text-muted-foreground'
+}
+</script>
+
+<style scoped>
+.hero-grid {
+  background-image:
+    linear-gradient(var(--foreground) 1px, transparent 1px),
+    linear-gradient(90deg, var(--foreground) 1px, transparent 1px);
+  background-size: 64px 64px;
+}
+
+.hero-anim-1 { animation: fadeUp 0.55s cubic-bezier(0.16, 1, 0.3, 1) 0.05s both; }
+.hero-anim-2 { animation: fadeUp 0.65s cubic-bezier(0.16, 1, 0.3, 1) 0.12s both; }
+.hero-anim-3 { animation: fadeUp 0.65s cubic-bezier(0.16, 1, 0.3, 1) 0.22s both; }
+.hero-anim-4 { animation: fadeUp 0.65s cubic-bezier(0.16, 1, 0.3, 1) 0.30s both; }
+.hero-anim-5 { animation: fadeUp 0.65s cubic-bezier(0.16, 1, 0.3, 1) 0.38s both; }
+.hero-anim-6 { animation: fadeUp 0.75s cubic-bezier(0.16, 1, 0.3, 1) 0.20s both; }
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.mockup-card {
+  animation: slideIn 0.45s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(12px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+</style>

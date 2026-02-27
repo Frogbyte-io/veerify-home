@@ -1,8 +1,8 @@
 - [ ] Add link to veerifys own feedback page
 - [ ] Add blog with sanity or similar
 - [ ] Add i18n for local versions of the site
-- [ ] Add Github link and button to the header
-- [ ] Add note that it is open source and link to the repo
+- [ ] Add Github link and button to the header and footer
+- [ ] Add note that it is open source and link to the repo in the header and footer
 - [ ] Change Get started link to the get started app.veerify.io/get-started
 - [ ] Add a section about the benefits of using Veerify for developers
 - [ ] Add a section about the benefits of using Veerify for users

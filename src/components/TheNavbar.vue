@@ -4,10 +4,8 @@
 
       <!-- Logo -->
       <a href="/" class="flex items-center gap-2.5 group">
-        <div class="flex h-8 w-8 items-center justify-center rounded-lg bg-primary text-primary-foreground shadow-lg shadow-primary/30 transition-transform group-hover:scale-105">
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-            <path d="M3 4h10M3 8h7M3 12h5" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/>
-          </svg>
+        <div class="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border border-border bg-secondary transition-transform group-hover:scale-105">
+          <img src="/veerify.svg" alt="Veerify" class="h-5 w-5" />
         </div>
         <span class="font-display text-[17px] font-semibold tracking-tight">Veerify</span>
       </a>
@@ -39,7 +37,7 @@
 
         <!-- GitHub link -->
         <a
-          href="https://github.com/veerify/veerify"
+          href="https://github.com/Frogbyte-io/veerify"
           target="_blank"
           rel="noopener noreferrer"
           class="hidden h-9 w-9 items-center justify-center rounded-lg border border-border text-muted-foreground transition-colors hover:border-border/60 hover:text-foreground sm:flex"

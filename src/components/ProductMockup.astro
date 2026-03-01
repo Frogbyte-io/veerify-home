@@ -1,0 +1,396 @@
+---
+const feedbackCards = [
+  {
+    tag: 'Feature',
+    text: 'Dark mode support',
+    votes: 47,
+    status: 'Planned',
+    detail: 'Add a dark theme switch and persist user preference across sessions.',
+  },
+  {
+    tag: 'Bug',
+    text: 'CSV export broken on Safari',
+    votes: 12,
+    status: 'In progress',
+    detail: 'Fix malformed CSV quoting that causes Safari downloads to open as invalid files.',
+  },
+  {
+    tag: 'Feature',
+    text: 'Slack integration',
+    votes: 89,
+    status: 'Planned',
+    detail: 'Post new feedback and status updates directly to Slack channels.',
+  },
+  {
+    tag: 'Idea',
+    text: 'Monthly digest email',
+    votes: 31,
+    status: 'Under review',
+    detail: 'Send a monthly summary of trending feedback and recently shipped items.',
+  },
+  {
+    tag: 'Feature',
+    text: 'API access for enterprise',
+    votes: 63,
+    status: 'Planned',
+    detail: 'Expose a secure API for enterprise sync with Jira and internal tools.',
+  },
+]
+
+const tagClasses: Record<string, string> = {
+  Feature: 'bg-primary/15 text-primary',
+  Bug: 'bg-destructive/15 text-destructive',
+  Idea: 'bg-chart-2/15 text-chart-2',
+}
+
+const statusClasses: Record<string, string> = {
+  Planned: 'bg-chart-4/15 text-chart-4',
+  'In progress': 'bg-chart-2/15 text-chart-2',
+  'Under review': 'bg-secondary text-muted-foreground',
+}
+
+function tagClass(tag: string) {
+  return tagClasses[tag] ?? 'bg-secondary text-muted-foreground'
+}
+
+function statusClass(status: string) {
+  return statusClasses[status] ?? 'bg-secondary text-muted-foreground'
+}
+---
+
+<div class="relative w-full max-w-[420px]">
+
+  <!-- Floating glow behind card -->
+  <div class="absolute inset-8 rounded-2xl bg-primary/10 blur-2xl"></div>
+
+  <!-- Browser chrome -->
+  <div class="relative h-[430px] overflow-hidden rounded-2xl border border-border/60 bg-card shadow-2xl shadow-black/40" data-hero-mockup>
+
+    <!-- Window bar -->
+    <div class="flex h-10 items-center border-b border-border/50 bg-card/80 px-4">
+      <div class="flex items-center gap-1.5">
+        <div class="h-2.5 w-2.5 rounded-full bg-destructive/50"></div>
+        <div class="h-2.5 w-2.5 rounded-full bg-chart-4/50"></div>
+        <div class="h-2.5 w-2.5 rounded-full bg-chart-2/50"></div>
+      </div>
+      <div class="ml-4 flex-1">
+        <div class="mx-auto flex h-[22px] max-w-[200px] items-center justify-center rounded-md bg-secondary/80 px-3">
+          <span class="text-[10px] text-muted-foreground">app.veerify.io</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- App content -->
+    <div class="relative flex h-[390px] flex-col p-4">
+
+      <!-- Mini header -->
+      <div class="mb-4 flex items-center justify-between gap-2">
+        <span class="text-sm font-semibold">All Feedback</span>
+        <div class="flex items-center gap-2">
+          <label class="sr-only" for="mockup-sort">Sort feedback</label>
+          <select
+            id="mockup-sort"
+            data-sort
+            class="h-6 rounded-md border border-border/60 bg-background px-2 text-[10px] text-muted-foreground outline-none transition-colors focus:border-primary/60"
+          >
+            <option value="top">Top votes</option>
+            <option value="newest">Newest</option>
+          </select>
+          <span data-items-count class="rounded-full bg-secondary px-2.5 py-0.5 text-[11px] text-muted-foreground">
+            {feedbackCards.length} items
+          </span>
+        </div>
+      </div>
+
+      <!-- Filter chips -->
+      <div class="mb-3 flex flex-wrap gap-1.5" data-filter-chips>
+        {['All', 'Feature', 'Bug', 'Idea'].map((chip, i) => (
+          <button
+            type="button"
+            data-filter-chip={chip}
+            class={`rounded-full px-2.5 py-0.5 text-[10px] font-medium transition-colors ${
+              i === 0
+                ? 'bg-primary text-primary-foreground'
+                : 'bg-secondary text-muted-foreground hover:text-foreground'
+            }`}
+          >{chip}</button>
+        ))}
+      </div>
+
+      <!-- Feedback cards -->
+      <div class="min-h-0 flex-1 space-y-2 overflow-y-auto pr-1" data-cards>
+        {feedbackCards.map((card, i) => (
+          <div
+            class="mockup-card cursor-pointer rounded-xl border border-border/60 bg-background/60 p-3 transition-colors hover:bg-secondary/20"
+            style={`animation-delay: ${0.3 + i * 0.12}s`}
+            data-card
+            data-tag={card.tag}
+            data-status={card.status}
+            data-title={card.text}
+            data-detail={card.detail}
+            data-votes={card.votes}
+            data-order={i}
+          >
+            <div class="flex items-start gap-3">
+              <div class="min-w-0 flex-1">
+                <div class="mb-1 flex flex-wrap items-center gap-1.5">
+                  <span class={`rounded-md px-1.5 py-0.5 text-[9px] font-semibold uppercase tracking-wide ${tagClass(card.tag)}`}>
+                    {card.tag}
+                  </span>
+                  <span class={`rounded-full px-1.5 py-0.5 text-[9px] ${statusClass(card.status)}`}>
+                    {card.status}
+                  </span>
+                </div>
+                <p class="text-[11px] font-medium leading-snug text-foreground">{card.text}</p>
+              </div>
+              <div class="flex shrink-0 flex-col items-center gap-0.5">
+                <button
+                  type="button"
+                  data-vote-button
+                  class="flex h-5 w-5 items-center justify-center rounded-md text-muted-foreground transition-colors hover:bg-secondary hover:text-primary"
+                  aria-label={`Upvote ${card.text}`}
+                  aria-pressed="false"
+                >
+                  <svg class="h-2.5 w-2.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M18 15l-6-6-6 6"/>
+                  </svg>
+                </button>
+                <span data-vote-count class="tabular-nums text-[10px] font-bold text-foreground">{card.votes}</span>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div
+        data-detail-modal
+        class="pointer-events-none absolute inset-4 z-10 hidden items-center justify-center"
+      >
+        <button
+          type="button"
+          data-detail-backdrop
+          class="absolute inset-0 rounded-xl bg-background/75 backdrop-blur-[1px]"
+          aria-label="Close details"
+        ></button>
+        <div class="relative w-full max-w-[280px] rounded-xl border border-border/70 bg-card p-3 shadow-lg shadow-black/20">
+          <div class="mb-2 flex items-start justify-between gap-3">
+            <div>
+              <p data-detail-title class="text-[11px] font-semibold leading-snug text-foreground"></p>
+              <p data-detail-meta class="text-[10px] text-muted-foreground"></p>
+            </div>
+            <button
+              type="button"
+              data-detail-close
+              class="rounded-md border border-border/70 px-2 py-0.5 text-[10px] text-muted-foreground transition-colors hover:text-foreground"
+            >
+              Close
+            </button>
+          </div>
+          <p data-detail-text class="text-[10px] leading-relaxed text-muted-foreground"></p>
+          <p class="mt-3 text-[10px] font-semibold uppercase tracking-wide text-muted-foreground">Comments</p>
+          <div data-detail-comments class="mt-2 space-y-2"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Floating notification badge -->
+  <div class="absolute -bottom-3 -right-3 flex items-center gap-2 rounded-xl border border-border bg-card px-3 py-2 shadow-xl shadow-black/20">
+    <div class="h-2 w-2 rounded-full bg-chart-2 ring-2 ring-chart-2/30"></div>
+    <span class="text-[11px] font-medium">New vote: Slack integration</span>
+  </div>
+</div>
+
+<script>
+  const mockupRoot = document.querySelector<HTMLElement>('[data-hero-mockup]')
+
+  if (mockupRoot) {
+    const chips = Array.from(
+      mockupRoot.querySelectorAll<HTMLButtonElement>('[data-filter-chip]'),
+    )
+    const sortSelect = mockupRoot.querySelector<HTMLSelectElement>('[data-sort]')
+    const cardsContainer = mockupRoot.querySelector<HTMLElement>('[data-cards]')
+    const itemsCount = mockupRoot.querySelector<HTMLElement>('[data-items-count]')
+    const detailModal = mockupRoot.querySelector<HTMLElement>('[data-detail-modal]')
+    const detailBackdrop = mockupRoot.querySelector<HTMLButtonElement>('[data-detail-backdrop]')
+    const detailTitle = mockupRoot.querySelector<HTMLElement>('[data-detail-title]')
+    const detailMeta = mockupRoot.querySelector<HTMLElement>('[data-detail-meta]')
+    const detailText = mockupRoot.querySelector<HTMLElement>('[data-detail-text]')
+    const detailComments = mockupRoot.querySelector<HTMLElement>('[data-detail-comments]')
+    const detailClose = mockupRoot.querySelector<HTMLButtonElement>('[data-detail-close]')
+
+    if (
+      sortSelect &&
+      cardsContainer &&
+      itemsCount &&
+      detailModal &&
+      detailBackdrop &&
+      detailTitle &&
+      detailMeta &&
+      detailText &&
+      detailComments &&
+      detailClose
+    ) {
+      const cardStates = Array.from(
+        cardsContainer.querySelectorAll<HTMLElement>('[data-card]'),
+      ).map((card, index) => ({
+        card,
+        voteButton: card.querySelector<HTMLButtonElement>('[data-vote-button]'),
+        voteCount: card.querySelector<HTMLElement>('[data-vote-count]'),
+        baseVotes: Number(card.dataset.votes ?? 0),
+        order: Number(card.dataset.order ?? index),
+        liked: false,
+      }))
+
+      let activeFilter = 'All'
+      let openCard: HTMLElement | null = null
+
+      const currentVotes = (state: (typeof cardStates)[number]) =>
+        state.baseVotes + (state.liked ? 1 : 0)
+
+      const demoCommentsByTitle: Record<string, Array<{ name: string; text: string }>> = {
+        'Dark mode support': [
+          { name: 'Ava', text: 'Would love this for late-night sessions.' },
+          { name: 'Jonas', text: 'Please sync with system preference by default.' },
+        ],
+        'CSV export broken on Safari': [
+          { name: 'Maya', text: 'Confirmed on Safari 17.3. Export fails every time.' },
+          { name: 'Leo', text: 'A fix here would unblock our reporting flow.' },
+        ],
+        'Slack integration': [
+          { name: 'Noah', text: 'Webhook support for channel routing would be great.' },
+          { name: 'Iris', text: 'We want status updates posted to #product-feedback.' },
+        ],
+        'Monthly digest email': [
+          { name: 'Chris', text: 'A monthly summary would keep stakeholders aligned.' },
+          { name: 'Nina', text: 'Include top-voted items and shipped updates please.' },
+        ],
+        'API access for enterprise': [
+          { name: 'Sofia', text: 'Needed for syncing into our internal portal.' },
+          { name: 'Ethan', text: 'API keys and audit logs would make this enterprise-ready.' },
+        ],
+      }
+
+      function updateVoteUI(state: (typeof cardStates)[number]) {
+        if (!state.voteButton || !state.voteCount) return
+
+        state.voteCount.textContent = String(currentVotes(state))
+        state.voteButton.classList.toggle('bg-primary/20', state.liked)
+        state.voteButton.classList.toggle('text-primary', state.liked)
+        state.voteButton.classList.toggle('text-muted-foreground', !state.liked)
+        state.voteButton.setAttribute('aria-pressed', String(state.liked))
+      }
+
+      function openDetails(card: HTMLElement) {
+        openCard = card
+        detailModal.classList.remove('hidden')
+        detailModal.classList.add('flex')
+        detailModal.classList.remove('pointer-events-none')
+        detailTitle.textContent = card.dataset.title ?? 'Feedback details'
+        detailMeta.textContent = `${card.dataset.tag ?? 'Feedback'} - ${card.dataset.status ?? 'Open'}`
+        detailText.textContent = card.dataset.detail ?? ''
+
+        const title = card.dataset.title ?? ''
+        const demoComments = demoCommentsByTitle[title] ?? [
+          { name: 'User 1', text: 'This looks useful. Looking forward to it.' },
+          { name: 'User 2', text: 'Happy to test this once available.' },
+        ]
+
+        detailComments.innerHTML = ''
+        demoComments.forEach(comment => {
+          const commentEl = document.createElement('div')
+          commentEl.className = 'rounded-md bg-secondary/60 px-2 py-1.5'
+          commentEl.innerHTML =
+            `<p class="text-[10px] font-semibold text-foreground">${comment.name}</p>` +
+            `<p class="mt-0.5 text-[10px] leading-relaxed text-muted-foreground">${comment.text}</p>`
+          detailComments.append(commentEl)
+        })
+      }
+
+      function closeDetails() {
+        openCard = null
+        detailModal.classList.add('hidden')
+        detailModal.classList.remove('flex')
+        detailModal.classList.add('pointer-events-none')
+      }
+
+      function isVisibleForFilter(card: HTMLElement) {
+        return activeFilter === 'All' || card.dataset.tag === activeFilter
+      }
+
+      function renderCards() {
+        const visibleCards = cardStates.filter(state =>
+          isVisibleForFilter(state.card),
+        )
+
+        const sortedCards = [...visibleCards].sort((a, b) => {
+          if (sortSelect.value === 'newest') return a.order - b.order
+
+          const voteDelta = currentVotes(b) - currentVotes(a)
+          if (voteDelta !== 0) return voteDelta
+
+          return a.order - b.order
+        })
+
+        cardStates.forEach(state => {
+          state.card.classList.toggle(
+            'hidden',
+            !visibleCards.some(visible => visible.card === state.card),
+          )
+        })
+
+        sortedCards.forEach(state => cardsContainer.append(state.card))
+        itemsCount.textContent = `${sortedCards.length} item${sortedCards.length === 1 ? '' : 's'}`
+
+        chips.forEach(chip => {
+          const isActive = chip.dataset.filterChip === activeFilter
+          chip.classList.toggle('bg-primary', isActive)
+          chip.classList.toggle('text-primary-foreground', isActive)
+          chip.classList.toggle('bg-secondary', !isActive)
+          chip.classList.toggle('text-muted-foreground', !isActive)
+          chip.classList.toggle('hover:text-foreground', !isActive)
+        })
+
+        if (openCard && !isVisibleForFilter(openCard)) {
+          closeDetails()
+        }
+      }
+
+      chips.forEach(chip => {
+        chip.addEventListener('click', () => {
+          activeFilter = chip.dataset.filterChip ?? 'All'
+          renderCards()
+        })
+      })
+
+      sortSelect.addEventListener('change', renderCards)
+      detailClose.addEventListener('click', closeDetails)
+      detailBackdrop.addEventListener('click', closeDetails)
+
+      cardStates.forEach(state => {
+        updateVoteUI(state)
+
+        state.voteButton?.addEventListener('click', event => {
+          event.stopPropagation()
+          state.liked = !state.liked
+          updateVoteUI(state)
+        })
+
+        state.card.addEventListener('click', () => openDetails(state.card))
+      })
+
+      renderCards()
+    }
+  }
+</script>
+
+<style>
+  .mockup-card {
+    animation: slideIn 0.45s cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+
+  @keyframes slideIn {
+    from { opacity: 0; transform: translateX(12px); }
+    to   { opacity: 1; transform: translateX(0); }
+  }
+</style>

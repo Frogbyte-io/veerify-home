@@ -1,0 +1,40 @@
+---
+import { getCollection, render } from 'astro:content'
+import BlogLayout from '../../../../layouts/BlogLayout.astro'
+import { getDictionary, isLocale, locales, type Locale } from '../../../../i18n/site'
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog', ({ data }) => !data.draft)
+
+  return locales.flatMap(locale =>
+    posts.map(post => ({
+      params: { locale, slug: post.slug },
+      props: { post },
+    })),
+  )
+}
+
+const localeParam = Astro.params.locale
+
+if (!isLocale(localeParam)) {
+  throw new Error(`Unsupported locale: ${localeParam}`)
+}
+
+const locale: Locale = localeParam
+const dict = getDictionary(locale)
+const { post } = Astro.props
+const { Content } = await render(post)
+---
+
+<BlogLayout
+  locale={locale}
+  t={dict.blog}
+  title={post.data.title}
+  description={post.data.description}
+  pubDate={post.data.pubDate}
+  author={post.data.author}
+  tags={post.data.tags}
+  updatedDate={post.data.updatedDate}
+>
+  <Content />
+</BlogLayout>

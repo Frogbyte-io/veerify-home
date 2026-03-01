@@ -6,6 +6,13 @@ export default defineConfig({
   output: 'static',
   adapter: vercel(),
   site: 'https://veerify.io',
+  i18n: {
+    defaultLocale: 'en',
+    locales: ['en', 'no'],
+    routing: {
+      prefixDefaultLocale: true,
+    },
+  },
   vite: {
     plugins: [tailwindcss()],
   },

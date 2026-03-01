@@ -1,0 +1,310 @@
+{
+  "layout": {
+    "title": "Veerify - Feedback that matters",
+    "description": "Veerify - Collect feedback that actually matters. The modern feedback management platform for product teams.",
+    "ogDescription": "Collect, organize, and act on user feedback. Always know what to build next."
+  },
+  "navbar": {
+    "features": "Features",
+    "howItWorks": "How it works",
+    "pricing": "Pricing",
+    "feedback": "Feedback",
+    "signIn": "Sign in",
+    "getStartedFree": "Get started free",
+    "darkModeToggle": "Toggle dark mode",
+    "openSourceTitle": "Open source on GitHub",
+    "languageLabel": "Language",
+    "languageNames": {
+      "en": "English",
+      "no": "Norwegian"
+    }
+  },
+  "hero": {
+    "betaPill": "Open beta - free forever",
+    "headlineTop": "Feedback",
+    "headlineAccent": "that actually",
+    "headlineBottom": "ships features.",
+    "subtext": "Veerify helps product teams collect, prioritize, and act on user feedback - so you always build the right thing next.",
+    "startFree": "Start for free",
+    "seeHowItWorks": "See how it works",
+    "trustSignals": {
+      "0": "Free forever during beta",
+      "1": "Unlimited projects",
+      "2": "5-minute setup"
+    }
+  },
+  "features": {
+    "sectionLabel": "Features",
+    "headingTop": "Everything you need.",
+    "headingBottom": "Nothing you don't.",
+    "intro": "A focused toolkit for collecting signal, removing noise, and shipping what users actually care about.",
+    "items": {
+      "0": {
+        "title": "Feedback Collection",
+        "desc": "Embed a widget anywhere or share a public link. Capture ideas, bugs, and feature requests from users in context."
+      },
+      "1": {
+        "title": "Voting & Prioritization",
+        "desc": "Let users vote on what matters most. Automatically surface your highest-impact opportunities and drop the noise."
+      },
+      "2": {
+        "title": "Public Roadmap",
+        "desc": "Show users where you're headed. Build trust by publishing your roadmap and closing the feedback loop automatically."
+      },
+      "3": {
+        "title": "Team Workflows",
+        "desc": "Organize feedback by project, assign owners, and track status across your team - all in a single place."
+      },
+      "4": {
+        "title": "Insights & Reports",
+        "desc": "Understand trends over time. See which themes surface repeatedly and make confident decisions with real data."
+      },
+      "5": {
+        "title": "Auto Notifications",
+        "desc": "Close the loop automatically. Notify users the moment their requested feature ships so nothing falls through."
+      }
+    }
+  },
+  "howItWorks": {
+    "sectionLabel": "How it works",
+    "headingTop": "From signal to shipped",
+    "headingBottom": "in three steps.",
+    "steps": {
+      "0": {
+        "number": "01",
+        "title": "Collect",
+        "desc": "Add Veerify to your app in minutes or share a public link. Start receiving structured feedback from users from day one."
+      },
+      "1": {
+        "number": "02",
+        "title": "Prioritize",
+        "desc": "Users vote, you decide. A clear signal-to-noise ratio means you always know what to build next - and what to skip."
+      },
+      "2": {
+        "number": "03",
+        "title": "Deliver",
+        "desc": "Ship it, update your roadmap, and notify users automatically. The feedback loop closes. Trust compounds."
+      }
+    }
+  },
+  "pricing": {
+    "sectionLabel": "Pricing",
+    "headingTop": "Free while we build",
+    "headingAccent": "together.",
+    "introTop": "Veerify is in open beta. Everything is free while we shape the",
+    "introBottom": "product alongside our earliest users.",
+    "badge": "Beta Access",
+    "price": "$0",
+    "perMonth": "/month",
+    "priceHint": "Free forever during beta. Fair pricing when we launch.",
+    "cta": "Get started - it's free",
+    "features": {
+      "0": "Unlimited feedback projects",
+      "1": "Unlimited team members",
+      "2": "Public roadmap pages",
+      "3": "Voting & prioritization",
+      "4": "User notifications",
+      "5": "API access",
+      "6": "Priority support during beta"
+    }
+  },
+  "benefits": {
+    "sectionLabel": "Built for everyone",
+    "headingTop": "The right tool",
+    "headingAccent": "for every role.",
+    "introTop": "Whether you're shipping code or shaping strategy,",
+    "introBottom": "Veerify works the way you do.",
+    "tabDevelopers": "For Developers",
+    "tabUsers": "For Users",
+    "developerBenefits": {
+      "0": {
+        "title": "Full REST API access",
+        "description": "Integrate feedback directly into your existing tools and workflows with a clean, well-documented API."
+      },
+      "1": {
+        "title": "Open source & self-hostable",
+        "description": "Inspect, fork, and contribute to the codebase. Host Veerify on your own infrastructure with complete control."
+      },
+      "2": {
+        "title": "Webhooks & event streams",
+        "description": "React to new feedback, votes, and status changes in real time via outbound webhooks to any endpoint."
+      },
+      "3": {
+        "title": "No vendor lock-in",
+        "description": "Export all your data at any time in standard formats. Your feedback belongs to you, always."
+      },
+      "4": {
+        "title": "5-minute setup",
+        "description": "Add a feedback widget to any product with a single script tag or our lightweight npm package."
+      }
+    },
+    "userBenefits": {
+      "0": {
+        "title": "Your voice shapes the product",
+        "description": "Submit ideas and bug reports directly to the team. Every piece of feedback is seen and considered."
+      },
+      "1": {
+        "title": "Vote on what matters most",
+        "description": "Upvote existing requests to signal priority. The most-wanted features get built first."
+      },
+      "2": {
+        "title": "Transparent public roadmap",
+        "description": "See exactly what's planned, in progress, and shipped. No more guessing what comes next."
+      },
+      "3": {
+        "title": "Stay in the loop automatically",
+        "description": "Get notified when a feature you voted for moves to \"In Progress\" or ships to production."
+      },
+      "4": {
+        "title": "Simple and fast to use",
+        "description": "Submit feedback in seconds - no accounts required on public boards. Just say what you need."
+      }
+    },
+    "callouts": {
+      "developers": {
+        "stat": "5 min",
+        "label": "Average integration time",
+        "tags": {
+          "0": "REST API + webhooks",
+          "1": "Open source - MIT License",
+          "2": "Self-host or cloud"
+        }
+      },
+      "users": {
+        "stat": "3x",
+        "label": "More features shipped with user input",
+        "tags": {
+          "0": "Public voting boards",
+          "1": "Live roadmap updates",
+          "2": "Instant notifications"
+        }
+      }
+    }
+  },
+  "cta": {
+    "sectionLabel": "Get started today",
+    "headingTop": "Start listening to",
+    "headingBottom": "your users today.",
+    "description": "Join the teams already using Veerify to build products their users actually love.",
+    "cta": "Create your free account",
+    "hint": "No credit card required. Free during beta."
+  },
+  "productMockup": {
+    "headerTitle": "All Feedback",
+    "sortLabel": "Sort feedback",
+    "sortTop": "Top votes",
+    "sortNewest": "Newest",
+    "itemsSingular": "item",
+    "itemsPlural": "items",
+    "filterAll": "All",
+    "filterFeature": "Feature",
+    "filterBug": "Bug",
+    "filterIdea": "Idea",
+    "closeDetailsLabel": "Close details",
+    "closeLabel": "Close",
+    "commentsLabel": "Comments",
+    "defaultDetailTitle": "Feedback details",
+    "defaultDetailMetaType": "Feedback",
+    "defaultDetailMetaStatus": "Open",
+    "defaultComments": {
+      "0": { "name": "User 1", "text": "This looks useful. Looking forward to it." },
+      "1": { "name": "User 2", "text": "Happy to test this once available." }
+    },
+    "notification": "New vote: Slack integration",
+    "cards": {
+      "0": {
+        "tag": "Feature",
+        "text": "Dark mode support",
+        "votes": 47,
+        "status": "Planned",
+        "detail": "Add a dark theme switch and persist user preference across sessions.",
+        "comments": {
+          "0": { "name": "Ava", "text": "Would love this for late-night sessions." },
+          "1": { "name": "Jonas", "text": "Please sync with system preference by default." }
+        }
+      },
+      "1": {
+        "tag": "Bug",
+        "text": "CSV export broken on Safari",
+        "votes": 12,
+        "status": "In progress",
+        "detail": "Fix malformed CSV quoting that causes Safari downloads to open as invalid files.",
+        "comments": {
+          "0": { "name": "Maya", "text": "Confirmed on Safari 17.3. Export fails every time." },
+          "1": { "name": "Leo", "text": "A fix here would unblock our reporting flow." }
+        }
+      },
+      "2": {
+        "tag": "Feature",
+        "text": "Slack integration",
+        "votes": 89,
+        "status": "Planned",
+        "detail": "Post new feedback and status updates directly to Slack channels.",
+        "comments": {
+          "0": { "name": "Noah", "text": "Webhook support for channel routing would be great." },
+          "1": { "name": "Iris", "text": "We want status updates posted to #product-feedback." }
+        }
+      },
+      "3": {
+        "tag": "Idea",
+        "text": "Monthly digest email",
+        "votes": 31,
+        "status": "Under review",
+        "detail": "Send a monthly summary of trending feedback and recently shipped items.",
+        "comments": {
+          "0": { "name": "Chris", "text": "A monthly summary would keep stakeholders aligned." },
+          "1": { "name": "Nina", "text": "Include top-voted items and shipped updates please." }
+        }
+      },
+      "4": {
+        "tag": "Feature",
+        "text": "API access for enterprise",
+        "votes": 63,
+        "status": "Planned",
+        "detail": "Expose a secure API for enterprise sync with Jira and internal tools.",
+        "comments": {
+          "0": { "name": "Sofia", "text": "Needed for syncing into our internal portal." },
+          "1": { "name": "Ethan", "text": "API keys and audit logs would make this enterprise-ready." }
+        }
+      }
+    }
+  },
+  "footer": {
+    "description": "The feedback platform for teams who care about what they build.",
+    "openSourceOnGithub": "Open source on GitHub",
+    "product": "Product",
+    "company": "Company",
+    "getStarted": "Get started",
+    "features": "Features",
+    "pricing": "Pricing",
+    "howItWorks": "How it works",
+    "feedback": "Feedback",
+    "signIn": "Sign in",
+    "about": "About",
+    "blog": "Blog",
+    "github": "GitHub",
+    "privacy": "Privacy",
+    "terms": "Terms",
+    "tryForFree": "Try for free ->",
+    "freeDuringBeta": "Free during beta.",
+    "copyright": "© 2026 Veerify. All rights reserved.",
+    "openSource": "Open source",
+    "goToApp": "Go to app ->"
+  },
+  "blog": {
+    "title": "Blog - Veerify",
+    "description": "Insights on feedback management, product development, and building user-centric software.",
+    "sectionLabel": "Blog",
+    "headingTop": "Thoughts on building",
+    "headingAccent": "better products.",
+    "intro": "Insights on feedback management, product development, and what it takes to build software users actually love.",
+    "noPosts": "No posts published yet. Check back soon.",
+    "backToBlog": "Back to Blog",
+    "updatedPrefix": "Updated",
+    "tryVeerify": "Try Veerify",
+    "bottomTitle": "Start collecting feedback today",
+    "bottomDescription": "Free during beta. No credit card required.",
+    "bottomCta": "Get started free",
+    "pageTitleSuffix": "Veerify Blog"
+  }
+}

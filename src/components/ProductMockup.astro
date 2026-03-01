@@ -1,52 +1,27 @@
----
-const feedbackCards = [
-  {
-    tag: 'Feature',
-    text: 'Dark mode support',
-    votes: 47,
-    status: 'Planned',
-    detail: 'Add a dark theme switch and persist user preference across sessions.',
-  },
-  {
-    tag: 'Bug',
-    text: 'CSV export broken on Safari',
-    votes: 12,
-    status: 'In progress',
-    detail: 'Fix malformed CSV quoting that causes Safari downloads to open as invalid files.',
-  },
-  {
-    tag: 'Feature',
-    text: 'Slack integration',
-    votes: 89,
-    status: 'Planned',
-    detail: 'Post new feedback and status updates directly to Slack channels.',
-  },
-  {
-    tag: 'Idea',
-    text: 'Monthly digest email',
-    votes: 31,
-    status: 'Under review',
-    detail: 'Send a monthly summary of trending feedback and recently shipped items.',
-  },
-  {
-    tag: 'Feature',
-    text: 'API access for enterprise',
-    votes: 63,
-    status: 'Planned',
-    detail: 'Expose a secure API for enterprise sync with Jira and internal tools.',
-  },
-]
+﻿---
+import { type Locale, type SiteDictionary } from '../i18n/site'
 
-const tagClasses: Record<string, string> = {
-  Feature: 'bg-primary/15 text-primary',
-  Bug: 'bg-destructive/15 text-destructive',
-  Idea: 'bg-chart-2/15 text-chart-2',
+interface Props {
+  locale: Locale
+  t: SiteDictionary['productMockup']
 }
 
+const { locale, t } = Astro.props
+
+const tagClasses: Record<string, string> = {
+  [t.filterFeature]: 'bg-primary/15 text-primary',
+  [t.filterBug]: 'bg-destructive/15 text-destructive',
+  [t.filterIdea]: 'bg-chart-2/15 text-chart-2',
+}
+
+const plannedStatus = t.cards[0]?.status
+const inProgressStatus = t.cards[1]?.status
+const underReviewStatus = t.cards[3]?.status
+
 const statusClasses: Record<string, string> = {
-  Planned: 'bg-chart-4/15 text-chart-4',
-  'In progress': 'bg-chart-2/15 text-chart-2',
-  'Under review': 'bg-secondary text-muted-foreground',
+  [plannedStatus]: 'bg-chart-4/15 text-chart-4',
+  [inProgressStatus]: 'bg-chart-2/15 text-chart-2',
+  [underReviewStatus]: 'bg-secondary text-muted-foreground',
 }
 
 function tagClass(tag: string) {
@@ -58,15 +33,19 @@ function statusClass(status: string) {
 }
 ---
 
-<div class="relative w-full max-w-[420px]">
-
-  <!-- Floating glow behind card -->
+<div
+  class="relative w-full max-w-[420px]"
+  data-hero-mockup
+  data-filter-all={t.filterAll}
+  data-items-singular={t.itemsSingular}
+  data-items-plural={t.itemsPlural}
+  data-default-detail-title={t.defaultDetailTitle}
+  data-default-detail-meta-type={t.defaultDetailMetaType}
+  data-default-detail-meta-status={t.defaultDetailMetaStatus}
+>
   <div class="absolute inset-8 rounded-2xl bg-primary/10 blur-2xl"></div>
 
-  <!-- Browser chrome -->
-  <div class="relative h-[430px] overflow-hidden rounded-2xl border border-border/60 bg-card shadow-2xl shadow-black/40" data-hero-mockup>
-
-    <!-- Window bar -->
+  <div class="relative h-[430px] overflow-hidden rounded-2xl border border-border/60 bg-card shadow-2xl shadow-black/40">
     <div class="flex h-10 items-center border-b border-border/50 bg-card/80 px-4">
       <div class="flex items-center gap-1.5">
         <div class="h-2.5 w-2.5 rounded-full bg-destructive/50"></div>
@@ -80,31 +59,27 @@ function statusClass(status: string) {
       </div>
     </div>
 
-    <!-- App content -->
     <div class="relative flex h-[390px] flex-col p-4">
-
-      <!-- Mini header -->
       <div class="mb-4 flex items-center justify-between gap-2">
-        <span class="text-sm font-semibold">All Feedback</span>
+        <span class="text-sm font-semibold">{t.headerTitle}</span>
         <div class="flex items-center gap-2">
-          <label class="sr-only" for="mockup-sort">Sort feedback</label>
+          <label class="sr-only" for="mockup-sort">{t.sortLabel}</label>
           <select
             id="mockup-sort"
             data-sort
             class="h-6 rounded-md border border-border/60 bg-background px-2 text-[10px] text-muted-foreground outline-none transition-colors focus:border-primary/60"
           >
-            <option value="top">Top votes</option>
-            <option value="newest">Newest</option>
+            <option value="top">{t.sortTop}</option>
+            <option value="newest">{t.sortNewest}</option>
           </select>
           <span data-items-count class="rounded-full bg-secondary px-2.5 py-0.5 text-[11px] text-muted-foreground">
-            {feedbackCards.length} items
+            {t.cards.length} {t.itemsPlural}
           </span>
         </div>
       </div>
 
-      <!-- Filter chips -->
       <div class="mb-3 flex flex-wrap gap-1.5" data-filter-chips>
-        {['All', 'Feature', 'Bug', 'Idea'].map((chip, i) => (
+        {[t.filterAll, t.filterFeature, t.filterBug, t.filterIdea].map((chip, i) => (
           <button
             type="button"
             data-filter-chip={chip}
@@ -117,9 +92,8 @@ function statusClass(status: string) {
         ))}
       </div>
 
-      <!-- Feedback cards -->
       <div class="min-h-0 flex-1 space-y-2 overflow-y-auto pr-1" data-cards>
-        {feedbackCards.map((card, i) => (
+        {t.cards.map((card, i) => (
           <div
             class="mockup-card cursor-pointer rounded-xl border border-border/60 bg-background/60 p-3 transition-colors hover:bg-secondary/20"
             style={`animation-delay: ${0.3 + i * 0.12}s`}
@@ -130,6 +104,7 @@ function statusClass(status: string) {
             data-detail={card.detail}
             data-votes={card.votes}
             data-order={i}
+            data-comments={encodeURIComponent(JSON.stringify(card.comments))}
           >
             <div class="flex items-start gap-3">
               <div class="min-w-0 flex-1">
@@ -148,7 +123,7 @@ function statusClass(status: string) {
                   type="button"
                   data-vote-button
                   class="flex h-5 w-5 items-center justify-center rounded-md text-muted-foreground transition-colors hover:bg-secondary hover:text-primary"
-                  aria-label={`Upvote ${card.text}`}
+                  aria-label={locale === 'no' ? `Stem opp ${card.text}` : `Upvote ${card.text}`}
                   aria-pressed="false"
                 >
                   <svg class="h-2.5 w-2.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -162,15 +137,12 @@ function statusClass(status: string) {
         ))}
       </div>
 
-      <div
-        data-detail-modal
-        class="pointer-events-none absolute inset-4 z-10 hidden items-center justify-center"
-      >
+      <div data-detail-modal class="pointer-events-none absolute inset-4 z-10 hidden items-center justify-center">
         <button
           type="button"
           data-detail-backdrop
           class="absolute inset-0 rounded-xl bg-background/75 backdrop-blur-[1px]"
-          aria-label="Close details"
+          aria-label={t.closeDetailsLabel}
         ></button>
         <div class="relative w-full max-w-[280px] rounded-xl border border-border/70 bg-card p-3 shadow-lg shadow-black/20">
           <div class="mb-2 flex items-start justify-between gap-3">
@@ -183,21 +155,22 @@ function statusClass(status: string) {
               data-detail-close
               class="rounded-md border border-border/70 px-2 py-0.5 text-[10px] text-muted-foreground transition-colors hover:text-foreground"
             >
-              Close
+              {t.closeLabel}
             </button>
           </div>
           <p data-detail-text class="text-[10px] leading-relaxed text-muted-foreground"></p>
-          <p class="mt-3 text-[10px] font-semibold uppercase tracking-wide text-muted-foreground">Comments</p>
+          <p class="mt-3 text-[10px] font-semibold uppercase tracking-wide text-muted-foreground">{t.commentsLabel}</p>
           <div data-detail-comments class="mt-2 space-y-2"></div>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- Floating notification badge -->
+  <script type="application/json" data-default-comments set:html={JSON.stringify(t.defaultComments)}></script>
+
   <div class="absolute -bottom-3 -right-3 flex items-center gap-2 rounded-xl border border-border bg-card px-3 py-2 shadow-xl shadow-black/20">
     <div class="h-2 w-2 rounded-full bg-chart-2 ring-2 ring-chart-2/30"></div>
-    <span class="text-[11px] font-medium">New vote: Slack integration</span>
+    <span class="text-[11px] font-medium">{t.notification}</span>
   </div>
 </div>
 
@@ -205,9 +178,7 @@ function statusClass(status: string) {
   const mockupRoot = document.querySelector<HTMLElement>('[data-hero-mockup]')
 
   if (mockupRoot) {
-    const chips = Array.from(
-      mockupRoot.querySelectorAll<HTMLButtonElement>('[data-filter-chip]'),
-    )
+    const chips = Array.from(mockupRoot.querySelectorAll<HTMLButtonElement>('[data-filter-chip]'))
     const sortSelect = mockupRoot.querySelector<HTMLSelectElement>('[data-sort]')
     const cardsContainer = mockupRoot.querySelector<HTMLElement>('[data-cards]')
     const itemsCount = mockupRoot.querySelector<HTMLElement>('[data-items-count]')
@@ -218,6 +189,7 @@ function statusClass(status: string) {
     const detailText = mockupRoot.querySelector<HTMLElement>('[data-detail-text]')
     const detailComments = mockupRoot.querySelector<HTMLElement>('[data-detail-comments]')
     const detailClose = mockupRoot.querySelector<HTMLButtonElement>('[data-detail-close]')
+    const defaultCommentsScript = mockupRoot.querySelector<HTMLScriptElement>('[data-default-comments]')
 
     if (
       sortSelect &&
@@ -231,9 +203,27 @@ function statusClass(status: string) {
       detailComments &&
       detailClose
     ) {
-      const cardStates = Array.from(
-        cardsContainer.querySelectorAll<HTMLElement>('[data-card]'),
-      ).map((card, index) => ({
+      const defaultFilter = mockupRoot.dataset.filterAll ?? 'All'
+      const itemsSingular = mockupRoot.dataset.itemsSingular ?? 'item'
+      const itemsPlural = mockupRoot.dataset.itemsPlural ?? 'items'
+      const defaultDetailTitle = mockupRoot.dataset.defaultDetailTitle ?? 'Feedback details'
+      const defaultDetailMetaType = mockupRoot.dataset.defaultDetailMetaType ?? 'Feedback'
+      const defaultDetailMetaStatus = mockupRoot.dataset.defaultDetailMetaStatus ?? 'Open'
+
+      let defaultComments: Array<{ name: string; text: string }> = [
+        { name: 'User 1', text: 'This looks useful. Looking forward to it.' },
+        { name: 'User 2', text: 'Happy to test this once available.' },
+      ]
+
+      if (defaultCommentsScript?.textContent) {
+        try {
+          defaultComments = JSON.parse(defaultCommentsScript.textContent)
+        } catch {
+          defaultComments = defaultComments
+        }
+      }
+
+      const cardStates = Array.from(cardsContainer.querySelectorAll<HTMLElement>('[data-card]')).map((card, index) => ({
         card,
         voteButton: card.querySelector<HTMLButtonElement>('[data-vote-button]'),
         voteCount: card.querySelector<HTMLElement>('[data-vote-count]'),
@@ -242,34 +232,11 @@ function statusClass(status: string) {
         liked: false,
       }))
 
-      let activeFilter = 'All'
+      let activeFilter = defaultFilter
       let openCard: HTMLElement | null = null
 
       const currentVotes = (state: (typeof cardStates)[number]) =>
         state.baseVotes + (state.liked ? 1 : 0)
-
-      const demoCommentsByTitle: Record<string, Array<{ name: string; text: string }>> = {
-        'Dark mode support': [
-          { name: 'Ava', text: 'Would love this for late-night sessions.' },
-          { name: 'Jonas', text: 'Please sync with system preference by default.' },
-        ],
-        'CSV export broken on Safari': [
-          { name: 'Maya', text: 'Confirmed on Safari 17.3. Export fails every time.' },
-          { name: 'Leo', text: 'A fix here would unblock our reporting flow.' },
-        ],
-        'Slack integration': [
-          { name: 'Noah', text: 'Webhook support for channel routing would be great.' },
-          { name: 'Iris', text: 'We want status updates posted to #product-feedback.' },
-        ],
-        'Monthly digest email': [
-          { name: 'Chris', text: 'A monthly summary would keep stakeholders aligned.' },
-          { name: 'Nina', text: 'Include top-voted items and shipped updates please.' },
-        ],
-        'API access for enterprise': [
-          { name: 'Sofia', text: 'Needed for syncing into our internal portal.' },
-          { name: 'Ethan', text: 'API keys and audit logs would make this enterprise-ready.' },
-        ],
-      }
 
       function updateVoteUI(state: (typeof cardStates)[number]) {
         if (!state.voteButton || !state.voteCount) return
@@ -286,18 +253,21 @@ function statusClass(status: string) {
         detailModal.classList.remove('hidden')
         detailModal.classList.add('flex')
         detailModal.classList.remove('pointer-events-none')
-        detailTitle.textContent = card.dataset.title ?? 'Feedback details'
-        detailMeta.textContent = `${card.dataset.tag ?? 'Feedback'} - ${card.dataset.status ?? 'Open'}`
+        detailTitle.textContent = card.dataset.title ?? defaultDetailTitle
+        detailMeta.textContent = `${card.dataset.tag ?? defaultDetailMetaType} - ${card.dataset.status ?? defaultDetailMetaStatus}`
         detailText.textContent = card.dataset.detail ?? ''
 
-        const title = card.dataset.title ?? ''
-        const demoComments = demoCommentsByTitle[title] ?? [
-          { name: 'User 1', text: 'This looks useful. Looking forward to it.' },
-          { name: 'User 2', text: 'Happy to test this once available.' },
-        ]
+        let parsedComments = defaultComments
+        if (card.dataset.comments) {
+          try {
+            parsedComments = JSON.parse(decodeURIComponent(card.dataset.comments))
+          } catch {
+            parsedComments = defaultComments
+          }
+        }
 
         detailComments.innerHTML = ''
-        demoComments.forEach(comment => {
+        parsedComments.forEach(comment => {
           const commentEl = document.createElement('div')
           commentEl.className = 'rounded-md bg-secondary/60 px-2 py-1.5'
           commentEl.innerHTML =
@@ -315,13 +285,15 @@ function statusClass(status: string) {
       }
 
       function isVisibleForFilter(card: HTMLElement) {
-        return activeFilter === 'All' || card.dataset.tag === activeFilter
+        return activeFilter === defaultFilter || card.dataset.tag === activeFilter
+      }
+
+      function getItemsLabel(count: number) {
+        return `${count} ${count === 1 ? itemsSingular : itemsPlural}`
       }
 
       function renderCards() {
-        const visibleCards = cardStates.filter(state =>
-          isVisibleForFilter(state.card),
-        )
+        const visibleCards = cardStates.filter(state => isVisibleForFilter(state.card))
 
         const sortedCards = [...visibleCards].sort((a, b) => {
           if (sortSelect.value === 'newest') return a.order - b.order
@@ -333,14 +305,11 @@ function statusClass(status: string) {
         })
 
         cardStates.forEach(state => {
-          state.card.classList.toggle(
-            'hidden',
-            !visibleCards.some(visible => visible.card === state.card),
-          )
+          state.card.classList.toggle('hidden', !visibleCards.some(visible => visible.card === state.card))
         })
 
         sortedCards.forEach(state => cardsContainer.append(state.card))
-        itemsCount.textContent = `${sortedCards.length} item${sortedCards.length === 1 ? '' : 's'}`
+        itemsCount.textContent = getItemsLabel(sortedCards.length)
 
         chips.forEach(chip => {
           const isActive = chip.dataset.filterChip === activeFilter
@@ -358,7 +327,7 @@ function statusClass(status: string) {
 
       chips.forEach(chip => {
         chip.addEventListener('click', () => {
-          activeFilter = chip.dataset.filterChip ?? 'All'
+          activeFilter = chip.dataset.filterChip ?? defaultFilter
           renderCards()
         })
       })

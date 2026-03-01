@@ -1,0 +1,310 @@
+{
+  "layout": {
+    "title": "Veerify – Tilbakemeldinger som driver produktet fremover",
+    "description": "Veerify hjelper deg å samle inn og prioritere tilbakemeldinger som faktisk betyr noe. En moderne plattform for produktteam.",
+    "ogDescription": "Samle inn, forstå og handle på brukerinnsikt. Vit alltid hva som bør bygges videre."
+  },
+  "navbar": {
+    "features": "Funksjoner",
+    "howItWorks": "Slik fungerer det",
+    "pricing": "Priser",
+    "feedback": "Tilbakemeldinger",
+    "signIn": "Logg inn",
+    "getStartedFree": "Start gratis",
+    "darkModeToggle": "Bytt mørk modus",
+    "openSourceTitle": "Åpen kildekode på GitHub",
+    "languageLabel": "Språk",
+    "languageNames": {
+      "en": "Engelsk",
+      "no": "Norsk"
+    }
+  },
+  "hero": {
+    "betaPill": "Åpen beta – gratis",
+    "headlineTop": "Tilbakemeldinger",
+    "headlineAccent": "som faktisk",
+    "headlineBottom": "blir til produkt.",
+    "subtext": "Veerify gir produktteam oversikt over hva brukerne ønsker – og hva som faktisk bør prioriteres videre.",
+    "startFree": "Start gratis",
+    "seeHowItWorks": "Se hvordan det fungerer",
+    "trustSignals": {
+      "0": "Gratis i beta",
+      "1": "Ubegrensede prosjekter",
+      "2": "Kom i gang på minutter"
+    }
+  },
+  "features": {
+    "sectionLabel": "Funksjoner",
+    "headingTop": "Alt du trenger.",
+    "headingBottom": "Ingenting overflødig.",
+    "intro": "Et fokusert verktøy for å hente ut signal fra støy – og bygge det brukerne faktisk etterspør.",
+    "items": {
+      "0": {
+        "title": "Samle inn feedback",
+        "desc": "Legg inn en widget i produktet eller del en lenke. Fang opp ideer, feil og ønsker der brukerne faktisk er."
+      },
+      "1": {
+        "title": "Prioriter det riktige",
+        "desc": "La brukerne stemme. Få tydelig signal på hva som gir mest verdi – og hva som kan vente."
+      },
+      "2": {
+        "title": "Del roadmap",
+        "desc": "Vis hva dere jobber med og hva som kommer. Skap forutsigbarhet og tillit hos brukerne."
+      },
+      "3": {
+        "title": "Struktur for teamet",
+        "desc": "Samle alt på ett sted. Fordel ansvar, følg status og hold oversikt på tvers av teamet."
+      },
+      "4": {
+        "title": "Innsikt over tid",
+        "desc": "Se mønstre i feedbacken. Ta beslutninger basert på hva som faktisk går igjen hos brukerne."
+      },
+      "5": {
+        "title": "Automatiske oppdateringer",
+        "desc": "Gi beskjed når noe er levert. Hold brukerne i loopen uten ekstra manuelt arbeid."
+      }
+    }
+  },
+  "howItWorks": {
+    "sectionLabel": "Slik fungerer det",
+    "headingTop": "Fra innsikt til levert",
+    "headingBottom": "på tre steg.",
+    "steps": {
+      "0": {
+        "number": "01",
+        "title": "Samle",
+        "desc": "Start raskt med widget eller lenke. Få strukturert feedback fra første dag."
+      },
+      "1": {
+        "number": "02",
+        "title": "Prioriter",
+        "desc": "Brukerne gir signal. Du får klar retning på hva som bør bygges videre."
+      },
+      "2": {
+        "number": "03",
+        "title": "Lever",
+        "desc": "Ship, oppdater roadmap og varsle brukerne. Loopen er lukket."
+      }
+    }
+  },
+  "pricing": {
+    "sectionLabel": "Priser",
+    "headingTop": "Gratis mens vi bygger",
+    "headingAccent": "sammen.",
+    "introTop": "Veerify er i åpen beta, og alt er gratis mens vi utvikler",
+    "introBottom": "produktet sammen med de første brukerne.",
+    "badge": "Beta",
+    "price": "$0",
+    "perMonth": "/måned",
+    "priceHint": "Gratis i beta. Rettferdig prising senere.",
+    "cta": "Start gratis",
+    "features": {
+      "0": "Ubegrensede prosjekter",
+      "1": "Ubegrenset team",
+      "2": "Offentlige roadmaps",
+      "3": "Stemmegivning og prioritering",
+      "4": "Varslinger til brukere",
+      "5": "API-tilgang",
+      "6": "Prioritert support i beta"
+    }
+  },
+  "benefits": {
+    "sectionLabel": "For alle roller",
+    "headingTop": "Riktig verktøy",
+    "headingAccent": "uansett rolle.",
+    "introTop": "Enten du bygger produkt eller setter retning,",
+    "introBottom": "passer Veerify inn i arbeidsflyten din.",
+    "tabDevelopers": "For utviklere",
+    "tabUsers": "For brukere",
+    "developerBenefits": {
+      "0": {
+        "title": "Full API-tilgang",
+        "description": "Koble feedback direkte inn i dine eksisterende systemer og workflows."
+      },
+      "1": {
+        "title": "Åpen og fleksibel",
+        "description": "Se, tilpass og host selv. Full kontroll over egen stack."
+      },
+      "2": {
+        "title": "Webhooks og events",
+        "description": "Reager i sanntid på nye tilbakemeldinger og endringer."
+      },
+      "3": {
+        "title": "Ingen lock-in",
+        "description": "Eksporter data når du vil. Du eier alt."
+      },
+      "4": {
+        "title": "Rask oppstart",
+        "description": "Kom i gang på minutter med enkel integrasjon."
+      }
+    },
+    "userBenefits": {
+      "0": {
+        "title": "Påvirk produktet",
+        "description": "Del ideer og problemer direkte med teamet."
+      },
+      "1": {
+        "title": "Stem frem det viktigste",
+        "description": "Prioriter det som betyr mest for deg."
+      },
+      "2": {
+        "title": "Full oversikt",
+        "description": "Se hva som planlegges, bygges og er levert."
+      },
+      "3": {
+        "title": "Hold deg oppdatert",
+        "description": "Få beskjed når ting skjer."
+      },
+      "4": {
+        "title": "Enkelt å bruke",
+        "description": "Send inn feedback på sekunder – uten friksjon."
+      }
+    },
+    "callouts": {
+      "developers": {
+        "stat": "5 min",
+        "label": "Tid til integrasjon",
+        "tags": {
+          "0": "API + webhooks",
+          "1": "Åpen kildekode",
+          "2": "Self-host eller cloud"
+        }
+      },
+      "users": {
+        "stat": "3x",
+        "label": "Bedre prioritering med brukerinput",
+        "tags": {
+          "0": "Åpne boards",
+          "1": "Live roadmap",
+          "2": "Varsler"
+        }
+      }
+    }
+  },
+  "cta": {
+    "sectionLabel": "Kom i gang",
+    "headingTop": "Begynn å lytte til",
+    "headingBottom": "brukerne dine.",
+    "description": "Bruk Veerify til å bygge produkter som faktisk treffer.",
+    "cta": "Opprett konto",
+    "hint": "Gratis i beta. Ingen kredittkort."
+  },
+  "productMockup": {
+    "headerTitle": "All feedback",
+    "sortLabel": "Sorter",
+    "sortTop": "Mest stemmer",
+    "sortNewest": "Nyeste",
+    "itemsSingular": "sak",
+    "itemsPlural": "saker",
+    "filterAll": "Alle",
+    "filterFeature": "Funksjon",
+    "filterBug": "Feil",
+    "filterIdea": "Idé",
+    "closeDetailsLabel": "Lukk",
+    "closeLabel": "Lukk",
+    "commentsLabel": "Kommentarer",
+    "defaultDetailTitle": "Detaljer",
+    "defaultDetailMetaType": "Tilbakemelding",
+    "defaultDetailMetaStatus": "Åpen",
+    "defaultComments": {
+      "0": { "name": "Bruker 1", "text": "Ser lovende ut." },
+      "1": { "name": "Bruker 2", "text": "Tester gjerne." }
+    },
+    "notification": "Ny stemme: Slack-integrasjon",
+    "cards": {
+      "0": {
+        "tag": "Funksjon",
+        "text": "Mørk modus",
+        "votes": 47,
+        "status": "Planlagt",
+        "detail": "Legg til støtte for mørkt tema.",
+        "comments": {
+          "0": { "name": "Ava", "text": "Perfekt på kvelden." },
+          "1": { "name": "Jonas", "text": "Bør følge systemet." }
+        }
+      },
+      "1": {
+        "tag": "Feil",
+        "text": "CSV-eksport i Safari",
+        "votes": 12,
+        "status": "Under arbeid",
+        "detail": "Fiks eksport som feiler i Safari.",
+        "comments": {
+          "0": { "name": "Maya", "text": "Kan bekrefte bug." },
+          "1": { "name": "Leo", "text": "Blokkerer oss." }
+        }
+      },
+      "2": {
+        "tag": "Funksjon",
+        "text": "Slack-integrasjon",
+        "votes": 89,
+        "status": "Planlagt",
+        "detail": "Send oppdateringer til Slack.",
+        "comments": {
+          "0": { "name": "Noah", "text": "Webhook støtte?" },
+          "1": { "name": "Iris", "text": "Vil ha #product-feedback." }
+        }
+      },
+      "3": {
+        "tag": "Idé",
+        "text": "Månedlig oppsummering",
+        "votes": 31,
+        "status": "Vurderes",
+        "detail": "Send oversikt over viktig feedback.",
+        "comments": {
+          "0": { "name": "Chris", "text": "Bra for oversikt." },
+          "1": { "name": "Nina", "text": "Ta med toppsaker." }
+        }
+      },
+      "4": {
+        "tag": "Funksjon",
+        "text": "API for enterprise",
+        "votes": 63,
+        "status": "Planlagt",
+        "detail": "API for integrasjoner.",
+        "comments": {
+          "0": { "name": "Sofia", "text": "Trengs internt." },
+          "1": { "name": "Ethan", "text": "Audit logs viktig." }
+        }
+      }
+    }
+  },
+  "footer": {
+    "description": "For team som bygger med brukerne i fokus.",
+    "openSourceOnGithub": "Åpen kildekode",
+    "product": "Produkt",
+    "company": "Selskap",
+    "getStarted": "Kom i gang",
+    "features": "Funksjoner",
+    "pricing": "Priser",
+    "howItWorks": "Slik fungerer det",
+    "feedback": "Tilbakemeldinger",
+    "signIn": "Logg inn",
+    "about": "Om",
+    "blog": "Blogg",
+    "github": "GitHub",
+    "privacy": "Personvern",
+    "terms": "Vilkår",
+    "tryForFree": "Prøv gratis →",
+    "freeDuringBeta": "Gratis i beta",
+    "copyright": "© 2026 Veerify",
+    "openSource": "Åpen kildekode",
+    "goToApp": "Gå til app →"
+  },
+  "blog": {
+    "title": "Blogg – Veerify",
+    "description": "Innsikt om produktutvikling og feedback.",
+    "sectionLabel": "Blogg",
+    "headingTop": "Bedre produkter",
+    "headingAccent": "starter her.",
+    "intro": "Tanker om feedback, produkt og hva som faktisk gir verdi.",
+    "noPosts": "Ingen innlegg enda.",
+    "backToBlog": "Tilbake",
+    "updatedPrefix": "Oppdatert",
+    "tryVeerify": "Prøv Veerify",
+    "bottomTitle": "Start i dag",
+    "bottomDescription": "Gratis i beta.",
+    "bottomCta": "Start gratis",
+    "pageTitleSuffix": "Veerify Blogg"
+  }
+}

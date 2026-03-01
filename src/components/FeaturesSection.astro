@@ -1,61 +1,41 @@
----
-const features = [
-  {
-    title: 'Feedback Collection',
-    desc: 'Embed a widget anywhere or share a public link. Capture ideas, bugs, and feature requests from users in context.',
-    icon: `<path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>`,
-  },
-  {
-    title: 'Voting & Prioritization',
-    desc: 'Let users vote on what matters most. Automatically surface your highest-impact opportunities and drop the noise.',
-    icon: `<path d="M18 15l-6-6-6 6" opacity="0.5"/><path d="M18 9l-6-6-6 6"/>`,
-  },
-  {
-    title: 'Public Roadmap',
-    desc: "Show users where you're headed. Build trust by publishing your roadmap and closing the feedback loop automatically.",
-    icon: `<rect x="3" y="4" width="18" height="16" rx="2"/><path d="M8 4v16M12 9h5M12 13h3"/>`,
-  },
-  {
-    title: 'Team Workflows',
-    desc: 'Organize feedback by project, assign owners, and track status across your team — all in a single place.',
-    icon: `<path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/>`,
-  },
-  {
-    title: 'Insights & Reports',
-    desc: 'Understand trends over time. See which themes surface repeatedly and make confident decisions with real data.',
-    icon: `<path d="M18 20V10M12 20V4M6 20v-6"/>`,
-  },
-  {
-    title: 'Auto Notifications',
-    desc: 'Close the loop automatically. Notify users the moment their requested feature ships so nothing falls through.',
-    icon: `<path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9M13.73 21a2 2 0 0 1-3.46 0"/>`,
-  },
+﻿---
+import { type SiteDictionary } from '../i18n/site'
+
+interface Props {
+  t: SiteDictionary['features']
+}
+
+const { t } = Astro.props
+
+const icons = [
+  `<path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>`,
+  `<path d="M18 15l-6-6-6 6" opacity="0.5"/><path d="M18 9l-6-6-6 6"/>`,
+  `<rect x="3" y="4" width="18" height="16" rx="2"/><path d="M8 4v16M12 9h5M12 13h3"/>`,
+  `<path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/>`,
+  `<path d="M18 20V10M12 20V4M6 20v-6"/>`,
+  `<path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9M13.73 21a2 2 0 0 1-3.46 0"/>`,
 ]
 ---
 
 <section id="features" class="border-t border-border/50 py-28">
   <div class="mx-auto max-w-7xl px-6 lg:px-8">
-
     <div class="mb-16 max-w-2xl">
-      <p class="mb-3 text-xs font-semibold uppercase tracking-[0.15em] text-primary">Features</p>
+      <p class="mb-3 text-xs font-semibold uppercase tracking-[0.15em] text-primary">{t.sectionLabel}</p>
       <h2 class="font-display text-4xl font-bold tracking-tight lg:text-5xl">
-        Everything you need.<br />Nothing you don't.
+        {t.headingTop}<br />{t.headingBottom}
       </h2>
-      <p class="mt-4 max-w-lg text-lg leading-relaxed text-muted-foreground">
-        A focused toolkit for collecting signal, removing noise, and shipping what users actually care about.
-      </p>
+      <p class="mt-4 max-w-lg text-lg leading-relaxed text-muted-foreground">{t.intro}</p>
     </div>
 
-    <!-- Feature grid — gap-px + bg-border creates separator lines between cards -->
     <div
       class="grid grid-cols-1 overflow-hidden rounded-2xl border border-border/50 bg-border/20 sm:grid-cols-2 lg:grid-cols-3"
       style="gap: 1px;"
     >
-      {features.map(feature => (
+      {t.items.map((feature, index) => (
         <div class="feature-card group bg-background p-8 transition-colors hover:bg-secondary/20">
           <div class="mb-5 inline-flex h-10 w-10 items-center justify-center rounded-xl bg-primary/10 text-primary ring-1 ring-primary/20">
             <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <Fragment set:html={feature.icon} />
+              <Fragment set:html={icons[index]} />
             </svg>
           </div>
           <h3 class="mb-2 text-base font-semibold tracking-tight">{feature.title}</h3>

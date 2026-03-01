@@ -1,19 +1,19 @@
----
+﻿---
 import ProductMockup from './ProductMockup.astro'
+import { type Locale, type SiteDictionary } from '../i18n/site'
 
-const trustSignals = [
-  'Free forever during beta',
-  'Unlimited projects',
-  '5-minute setup',
-]
+interface Props {
+  locale: Locale
+  t: SiteDictionary['hero']
+  mockup: SiteDictionary['productMockup']
+}
+
+const { locale, t, mockup } = Astro.props
 ---
 
 <section class="relative overflow-hidden pb-24 pt-20 lg:pt-28">
-
-  <!-- Background grid -->
   <div class="hero-grid pointer-events-none absolute inset-0 opacity-[0.035]" aria-hidden="true"></div>
 
-  <!-- Ambient glow -->
   <div
     class="pointer-events-none absolute -top-40 left-1/2 h-[700px] w-[700px] -translate-x-1/2 rounded-full bg-primary/15 blur-[140px]"
     aria-hidden="true"
@@ -21,38 +21,31 @@ const trustSignals = [
 
   <div class="relative mx-auto max-w-7xl px-6 lg:px-8">
     <div class="grid grid-cols-1 gap-16 lg:grid-cols-[1fr_420px] xl:grid-cols-[1fr_480px] lg:items-center">
-
-      <!-- Left: Text content -->
       <div>
-
-        <!-- Beta pill -->
         <div class="hero-anim-1 mb-8 inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-4 py-1.5">
           <span class="relative flex h-2 w-2">
             <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary opacity-60"></span>
             <span class="relative inline-flex h-2 w-2 rounded-full bg-primary"></span>
           </span>
-          <span class="text-xs font-medium text-primary">Open beta — free forever</span>
+          <span class="text-xs font-medium text-primary">{t.betaPill}</span>
         </div>
 
-        <!-- Headline -->
         <h1 class="hero-anim-2 font-display text-5xl font-bold leading-[1.05] tracking-tight lg:text-[3.75rem] xl:text-[4.5rem]">
-          Feedback<br />
-          <em class="italic text-primary">that actually</em><br />
-          ships features.
+          {t.headlineTop}<br />
+          <em class="italic text-primary">{t.headlineAccent}</em><br />
+          {t.headlineBottom}
         </h1>
 
-        <!-- Subtext -->
         <p class="hero-anim-3 mt-6 max-w-[440px] text-lg leading-relaxed text-muted-foreground">
-          Veerify helps product teams collect, prioritize, and act on user feedback — so you always build the right thing next.
+          {t.subtext}
         </p>
 
-        <!-- CTAs -->
         <div class="hero-anim-4 mt-10 flex flex-wrap items-center gap-4">
           <a
             href="https://app.veerify.io/get-started"
             class="inline-flex h-12 items-center justify-center gap-2 rounded-xl bg-primary px-8 text-sm font-semibold text-primary-foreground shadow-xl shadow-primary/30 transition-all hover:opacity-90 hover:-translate-y-0.5"
           >
-            Start for free
+            {t.startFree}
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <path d="M5 12h14M12 5l7 7-7 7"/>
             </svg>
@@ -61,13 +54,12 @@ const trustSignals = [
             href="#how-it-works"
             class="inline-flex h-12 items-center justify-center rounded-xl border border-border px-8 text-sm font-medium text-foreground transition-all hover:bg-secondary"
           >
-            See how it works
+            {t.seeHowItWorks}
           </a>
         </div>
 
-        <!-- Trust signals -->
         <div class="hero-anim-5 mt-10 flex flex-wrap gap-x-6 gap-y-2">
-          {trustSignals.map(signal => (
+          {t.trustSignals.map(signal => (
             <span class="flex items-center gap-1.5 text-xs text-muted-foreground">
               <svg class="h-3.5 w-3.5 shrink-0 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                 <path d="M20 6L9 17l-5-5"/>
@@ -78,9 +70,8 @@ const trustSignals = [
         </div>
       </div>
 
-      <!-- Right: Product mockup -->
       <div class="hero-anim-6 flex justify-center lg:justify-end">
-        <ProductMockup />
+        <ProductMockup locale={locale} t={mockup} />
       </div>
     </div>
   </div>

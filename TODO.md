@@ -1,5 +1,5 @@
 - [x] Add link to veerifys own feedback page
-- [ ] Add i18n for local versions of the site. Norwegian and English to start with.
+- [x] Add i18n for local versions of the site. Norwegian and English to start with.
 - [x] Add Github link and button to the header and footer
 - [x] Add note that it is open source and link to the repo in the header and footer
 - [x] Change Get started link to the get started app.veerify.io/get-started

@@ -9,6 +9,7 @@
     <FeaturesSection />
     <HowItWorksSection />
     <PricingSection />
+    <BenefitsSection />
     <CtaSection />
     <TheFooter />
 
@@ -22,6 +23,7 @@ import HeroSection from './components/HeroSection.vue'
 import FeaturesSection from './components/FeaturesSection.vue'
 import HowItWorksSection from './components/HowItWorksSection.vue'
 import PricingSection from './components/PricingSection.vue'
+import BenefitsSection from './components/BenefitsSection.vue'
 import CtaSection from './components/CtaSection.vue'
 import TheFooter from './components/TheFooter.vue'
 

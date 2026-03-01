@@ -16,7 +16,7 @@
           Join the teams already using Veerify to build products their users actually love.
         </p>
         <a
-          href="https://app.veerify.io"
+          href="https://app.veerify.io/get-started"
           class="inline-flex h-14 items-center justify-center gap-2 rounded-xl bg-primary px-10 text-base font-semibold text-primary-foreground shadow-2xl shadow-primary/30 transition-all hover:opacity-90 hover:-translate-y-0.5"
         >
           Create your free account

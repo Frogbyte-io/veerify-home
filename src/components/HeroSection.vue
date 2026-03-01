@@ -40,7 +40,7 @@
           <!-- CTAs -->
           <div class="hero-anim-4 mt-10 flex flex-wrap items-center gap-4">
             <a
-              href="https://app.veerify.io"
+              href="https://app.veerify.io/get-started"
               class="inline-flex h-12 items-center justify-center gap-2 rounded-xl bg-primary px-8 text-sm font-semibold text-primary-foreground shadow-xl shadow-primary/30 transition-all hover:opacity-90 hover:-translate-y-0.5"
             >
               Start for free

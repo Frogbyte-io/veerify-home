@@ -51,7 +51,7 @@
 
             <!-- CTA -->
             <a
-              href="https://app.veerify.io"
+              href="https://app.veerify.io/get-started"
               class="flex h-12 w-full items-center justify-center gap-2 rounded-xl bg-primary text-sm font-semibold text-primary-foreground shadow-xl shadow-primary/25 transition-all hover:opacity-90 hover:-translate-y-0.5"
             >
               Get started — it's free

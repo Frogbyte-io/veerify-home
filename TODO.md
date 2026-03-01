@@ -7,4 +7,4 @@
 - [x] Add a section about the benefits of using Veerify for users
 - [x] Add simple functions to the Product mockup, like liking posts, opening feedback details, sorting, etc.
   - Implemented interactive filter chips, sorting control, upvote toggles, and click-to-open feedback details in `src/components/HeroSection.astro`.
-- [ ] Update bottom bar with veerify logo
+- [x] Update bottom bar with veerify logo

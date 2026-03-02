@@ -1,15 +1,26 @@
 ---
+import Layout from '../layouts/Layout.astro'
+import TheNavbar from '../components/TheNavbar.astro'
+import HeroSection from '../components/HeroSection.astro'
+import FeaturesSection from '../components/FeaturesSection.astro'
+import HowItWorksSection from '../components/HowItWorksSection.astro'
+import PricingSection from '../components/PricingSection.astro'
+import BenefitsSection from '../components/BenefitsSection.astro'
+import CtaSection from '../components/CtaSection.astro'
+import TheFooter from '../components/TheFooter.astro'
+import { defaultLocale, getDictionary } from '../i18n/site'
+
+const locale = defaultLocale
+const dict = getDictionary(locale)
 ---
-<html>
-  <head>
-    <meta charset="UTF-8" />
-    <script is:inline>
-      (function () {
-        var lang = navigator.language || ''
-        var isNorwegian = /^(nb|nn|no)\b/i.test(lang)
-        window.location.replace(isNorwegian ? '/no' : '/en')
-      })()
-    </script>
-  </head>
-  <body></body>
-</html>
+
+<Layout locale={locale}>
+  <TheNavbar locale={locale} t={dict.navbar} />
+  <HeroSection locale={locale} t={dict.hero} mockup={dict.productMockup} />
+  <FeaturesSection t={dict.features} />
+  <HowItWorksSection t={dict.howItWorks} />
+  <PricingSection t={dict.pricing} />
+  <BenefitsSection t={dict.benefits} />
+  <CtaSection t={dict.cta} />
+  <TheFooter locale={locale} t={dict.footer} />
+</Layout>

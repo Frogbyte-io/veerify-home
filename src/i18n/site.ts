@@ -11,9 +11,15 @@ export function isLocale(value: string | undefined): value is Locale {
 }
 
 export function withLocale(locale: Locale, path = ''): string {
-  if (!path || path === '/') return `/${locale}`
+  if (!path || path === '/') {
+    return locale === defaultLocale ? '/' : `/${locale}`
+  }
 
   const normalizedPath = path.startsWith('/') ? path : `/${path}`
+  if (locale === defaultLocale) {
+    return normalizedPath
+  }
+
   return `/${locale}${normalizedPath}`
 }
 

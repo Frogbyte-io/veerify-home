@@ -6,9 +6,11 @@ import FeaturesSection from '../../components/FeaturesSection.astro'
 import HowItWorksSection from '../../components/HowItWorksSection.astro'
 import PricingSection from '../../components/PricingSection.astro'
 import BenefitsSection from '../../components/BenefitsSection.astro'
+import CompareSection from '../../components/CompareSection.astro'
 import CtaSection from '../../components/CtaSection.astro'
 import TheFooter from '../../components/TheFooter.astro'
-import { getDictionary, isLocale, locales, type Locale } from '../../i18n/site'
+import { buildOrganizationSchema, buildSoftwareApplicationSchema } from '../../lib/seo'
+import { defaultLocale, getDictionary, isLocale, locales, type Locale } from '../../i18n/site'
 
 export function getStaticPaths() {
   return locales.map(locale => ({ params: { locale } }))
@@ -22,15 +24,17 @@ if (!isLocale(localeParam)) {
 
 const locale: Locale = localeParam
 const dict = getDictionary(locale)
+const homepageJsonLd = [buildOrganizationSchema(), buildSoftwareApplicationSchema()]
 ---
 
-<Layout locale={locale}>
+<Layout locale={locale} jsonLd={homepageJsonLd}>
   <TheNavbar locale={locale} t={dict.navbar} />
   <HeroSection locale={locale} t={dict.hero} mockup={dict.productMockup} />
   <FeaturesSection t={dict.features} />
   <HowItWorksSection t={dict.howItWorks} />
   <PricingSection t={dict.pricing} />
   <BenefitsSection t={dict.benefits} />
+  {locale === defaultLocale && <CompareSection />}
   <CtaSection t={dict.cta} />
   <TheFooter locale={locale} t={dict.footer} />
 </Layout>

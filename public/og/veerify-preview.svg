@@ -1,0 +1,27 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#11172A"/>
+  <rect x="48" y="48" width="1104" height="534" rx="32" fill="url(#bg)"/>
+  <circle cx="993" cy="154" r="164" fill="#6B7CFF" fill-opacity="0.22"/>
+  <circle cx="207" cy="515" r="168" fill="#4FE0C6" fill-opacity="0.18"/>
+  <rect x="108" y="116" width="984" height="398" rx="28" fill="#0E1423" stroke="#FFFFFF" stroke-opacity="0.12"/>
+  <text x="128" y="188" fill="#9AA6C4" font-family="Arial, sans-serif" font-size="24" letter-spacing="3">VEERIFY</text>
+  <text x="128" y="278" fill="white" font-family="Arial, sans-serif" font-size="68" font-weight="700">
+    Feedback that
+  </text>
+  <text x="128" y="354" fill="white" font-family="Arial, sans-serif" font-size="68" font-weight="700">
+    actually ships.
+  </text>
+  <text x="128" y="422" fill="#C5D0EA" font-family="Arial, sans-serif" font-size="30">
+    Public roadmaps, voting, changelogs, and product feedback for modern teams.
+  </text>
+  <rect x="128" y="462" width="282" height="52" rx="26" fill="#6B7CFF"/>
+  <text x="168" y="496" fill="white" font-family="Arial, sans-serif" font-size="24" font-weight="700">
+    veerify.io/compare
+  </text>
+  <defs>
+    <linearGradient id="bg" x1="48" y1="48" x2="1134" y2="582" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#1A2440"/>
+      <stop offset="1" stop-color="#11172A"/>
+    </linearGradient>
+  </defs>
+</svg>

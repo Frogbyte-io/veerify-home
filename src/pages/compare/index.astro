@@ -1,0 +1,78 @@
+---
+import Layout from '../../layouts/Layout.astro'
+import TheNavbar from '../../components/TheNavbar.astro'
+import TheFooter from '../../components/TheFooter.astro'
+import { comparisonEntries, secondaryCompetitors } from '../../lib/compare'
+import { buildBreadcrumbSchema } from '../../lib/seo'
+import { defaultLocale, getDictionary } from '../../i18n/site'
+
+const locale = defaultLocale
+const dict = getDictionary(locale)
+
+const pageTitle = 'Veerify Alternatives and Competitor Comparisons'
+const pageDescription = 'Compare Veerify with Canny, Productboard, UserVoice, Featurebase, and Nolt. Find the right feedback and public roadmap tool for your team.'
+---
+
+<Layout
+  locale={locale}
+  title={pageTitle}
+  description={pageDescription}
+  ogDescription={pageDescription}
+  localized={false}
+  jsonLd={buildBreadcrumbSchema([
+    { name: 'Home', path: '/' },
+    { name: 'Compare', path: '/compare' },
+  ])}
+>
+  <TheNavbar locale={locale} t={dict.navbar} />
+
+  <main class="mx-auto max-w-7xl px-6 py-16 lg:px-8 lg:py-24">
+    <header class="max-w-3xl">
+      <p class="mb-3 text-xs font-semibold uppercase tracking-[0.15em] text-primary">Compare</p>
+      <h1 class="font-display text-4xl font-bold tracking-tight lg:text-6xl">
+        Veerify alternatives and competitor comparisons
+      </h1>
+      <p class="mt-5 text-lg leading-relaxed text-muted-foreground">
+        We mapped the closest overlap around feedback boards, public roadmaps, changelogs, and
+        customer request workflows. The strongest search and product-fit overlap is with Canny,
+        Productboard, UserVoice, Featurebase, and Nolt.
+      </p>
+    </header>
+
+    <section class="mt-16">
+      <div class="grid grid-cols-1 gap-6 lg:grid-cols-2 xl:grid-cols-3">
+        {comparisonEntries.map((entry) => (
+          <a
+            href={`/compare/${entry.slug}`}
+            class="group rounded-2xl border border-border/60 bg-card p-7 transition-all hover:-translate-y-0.5 hover:border-primary/30 hover:shadow-lg hover:shadow-primary/5"
+          >
+            <p class="mb-3 text-xs font-semibold uppercase tracking-[0.15em] text-primary">
+              {entry.keyword}
+            </p>
+            <h2 class="font-display mb-3 text-3xl font-bold tracking-tight transition-colors group-hover:text-primary">
+              Veerify vs {entry.competitor}
+            </h2>
+            <p class="text-sm leading-relaxed text-muted-foreground">
+              {entry.summary}
+            </p>
+          </a>
+        ))}
+      </div>
+    </section>
+
+    <section class="mt-16 rounded-3xl border border-border/60 bg-card p-8 lg:p-10">
+      <p class="mb-3 text-xs font-semibold uppercase tracking-[0.15em] text-primary">Secondary overlap</p>
+      <h2 class="font-display text-3xl font-bold tracking-tight">Also relevant in this category</h2>
+      <div class="mt-8 grid grid-cols-1 gap-5 md:grid-cols-3">
+        {secondaryCompetitors.map((competitor) => (
+          <div class="rounded-2xl border border-border/60 bg-background/60 p-5">
+            <h3 class="text-lg font-semibold tracking-tight">{competitor.name}</h3>
+            <p class="mt-2 text-sm leading-relaxed text-muted-foreground">{competitor.summary}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+  </main>
+
+  <TheFooter locale={locale} t={dict.footer} />
+</Layout>

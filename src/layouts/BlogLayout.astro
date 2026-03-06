@@ -3,6 +3,7 @@ import Layout from './Layout.astro'
 import TheNavbar from '../components/TheNavbar.astro'
 import TheFooter from '../components/TheFooter.astro'
 import { getDateLocale, getDictionary, withLocale, type Locale, type SiteDictionary } from '../i18n/site'
+import { buildArticleSchema, buildBreadcrumbSchema, getCanonicalPath } from '../lib/seo'
 
 interface Props {
   locale: Locale
@@ -33,9 +34,38 @@ const formattedUpdatedDate = updatedDate
 
 const dict = getDictionary(locale)
 const blogHref = withLocale(locale, '/blog')
+const articlePath = getCanonicalPath(Astro.url.pathname, locale, true)
+const articleSchema = buildArticleSchema({
+  headline: title,
+  description,
+  path: articlePath,
+  locale,
+  datePublished: pubDate,
+  dateModified: updatedDate,
+  author,
+  keywords: tags,
+})
+const breadcrumbSchema = buildBreadcrumbSchema([
+  { name: 'Home', path: withLocale(locale) },
+  { name: 'Blog', path: blogHref },
+  { name: title, path: articlePath },
+])
 ---
 
-<Layout locale={locale} title={`${title} - ${t.pageTitleSuffix}`} description={description}>
+<Layout
+  locale={locale}
+  title={`${title} - ${t.pageTitleSuffix}`}
+  description={description}
+  ogDescription={description}
+  type="article"
+  article={{
+    publishedTime: pubDate,
+    modifiedTime: updatedDate,
+    author,
+    tags,
+  }}
+  jsonLd={[breadcrumbSchema, articleSchema]}
+>
   <TheNavbar locale={locale} t={dict.navbar} />
 
   <main class="mx-auto max-w-3xl px-6 py-16 lg:px-8 lg:py-24">

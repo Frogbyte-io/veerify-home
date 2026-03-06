@@ -1,0 +1,48 @@
+---
+import { comparisonEntries } from '../lib/compare'
+
+const featuredEntries = comparisonEntries.slice(0, 5)
+---
+
+<section class="border-t border-border/50 py-28">
+  <div class="mx-auto max-w-7xl px-6 lg:px-8">
+    <div class="mb-14 flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
+      <div class="max-w-2xl">
+        <p class="mb-3 text-xs font-semibold uppercase tracking-[0.15em] text-primary">Compare</p>
+        <h2 class="font-display text-4xl font-bold tracking-tight lg:text-5xl">
+          Looking for a competitor alternative?
+        </h2>
+        <p class="mt-4 text-lg leading-relaxed text-muted-foreground">
+          Veerify overlaps most with feedback and public roadmap tools like Canny, Productboard,
+          UserVoice, Featurebase, and Nolt. These pages are built to help teams compare fit fast.
+        </p>
+      </div>
+
+      <a
+        href="/compare"
+        class="inline-flex h-11 items-center justify-center rounded-xl border border-border/70 px-5 text-sm font-semibold transition-colors hover:border-primary/40 hover:text-primary"
+      >
+        See all comparisons
+      </a>
+    </div>
+
+    <div class="grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-5">
+      {featuredEntries.map((entry) => (
+        <a
+          href={`/compare/${entry.slug}`}
+          class="group rounded-2xl border border-border/60 bg-card p-6 transition-all hover:-translate-y-0.5 hover:border-primary/30 hover:shadow-lg hover:shadow-primary/5"
+        >
+          <p class="mb-3 text-xs font-semibold uppercase tracking-[0.15em] text-primary">
+            {entry.keyword}
+          </p>
+          <h3 class="font-display mb-3 text-2xl font-bold tracking-tight transition-colors group-hover:text-primary">
+            {entry.competitor}
+          </h3>
+          <p class="text-sm leading-relaxed text-muted-foreground">
+            {entry.summary}
+          </p>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>

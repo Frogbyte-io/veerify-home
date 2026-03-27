@@ -7,6 +7,7 @@ export const GET: APIRoute = () => {
     'Allow: /',
     '',
     `Sitemap: ${siteOrigin}/sitemap.xml`,
+    `Llms-txt: ${siteOrigin}/llms.txt`,
   ].join('\n')
 
   return new Response(body, {

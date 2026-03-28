@@ -9,7 +9,7 @@ import BenefitsSection from '../../components/BenefitsSection.astro'
 import CompareSection from '../../components/CompareSection.astro'
 import CtaSection from '../../components/CtaSection.astro'
 import TheFooter from '../../components/TheFooter.astro'
-import { buildOrganizationSchema, buildSoftwareApplicationSchema } from '../../lib/seo'
+import { buildOrganizationSchema, buildSoftwareApplicationSchema, buildWebSiteSchema } from '../../lib/seo'
 import { defaultLocale, getDictionary, isLocale, locales, type Locale } from '../../i18n/site'
 
 export function getStaticPaths() {
@@ -24,7 +24,7 @@ if (!isLocale(localeParam)) {
 
 const locale: Locale = localeParam
 const dict = getDictionary(locale)
-const homepageJsonLd = [buildOrganizationSchema(), buildSoftwareApplicationSchema()]
+const homepageJsonLd = [buildOrganizationSchema(), buildSoftwareApplicationSchema(), buildWebSiteSchema()]
 ---
 
 <Layout locale={locale} jsonLd={homepageJsonLd}>

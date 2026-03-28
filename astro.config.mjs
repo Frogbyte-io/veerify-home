@@ -4,7 +4,9 @@ import tailwindcss from '@tailwindcss/vite'
 
 export default defineConfig({
   output: 'static',
-  adapter: vercel(),
+  adapter: vercel({
+    webAnalytics: { enabled: true },
+  }),
   site: 'https://veerify.io',
   i18n: {
     defaultLocale: 'en',

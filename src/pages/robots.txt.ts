@@ -8,6 +8,7 @@ export const GET: APIRoute = () => {
     '',
     `Sitemap: ${siteOrigin}/sitemap.xml`,
     `Llms-txt: ${siteOrigin}/llms.txt`,
+    `Humans-txt: ${siteOrigin}/humans.txt`,
   ].join('\n')
 
   return new Response(body, {

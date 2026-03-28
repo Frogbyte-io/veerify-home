@@ -58,9 +58,7 @@ const jsonLd = [
       <h1 class="font-display text-4xl font-bold tracking-tight lg:text-6xl">
         Veerify vs {entry.competitor}
       </h1>
-      <p class="mt-5 text-lg leading-relaxed text-muted-foreground">
-        {entry.intro}
-      </p>
+      <p class="mt-5 text-lg leading-relaxed text-muted-foreground [&_a]:text-primary [&_a]:underline [&_a]:underline-offset-2 hover:[&_a]:opacity-80" set:html={entry.intro} />
     </header>
 
     <section class="mt-14 grid grid-cols-1 gap-6 lg:grid-cols-2">

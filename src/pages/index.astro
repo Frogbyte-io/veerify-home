@@ -10,11 +10,11 @@ import CompareSection from '../components/CompareSection.astro'
 import CtaSection from '../components/CtaSection.astro'
 import TheFooter from '../components/TheFooter.astro'
 import { defaultLocale, getDictionary } from '../i18n/site'
-import { buildOrganizationSchema, buildSoftwareApplicationSchema } from '../lib/seo'
+import { buildOrganizationSchema, buildSoftwareApplicationSchema, buildWebSiteSchema } from '../lib/seo'
 
 const locale = defaultLocale
 const dict = getDictionary(locale)
-const homepageJsonLd = [buildOrganizationSchema(), buildSoftwareApplicationSchema()]
+const homepageJsonLd = [buildOrganizationSchema(), buildSoftwareApplicationSchema(), buildWebSiteSchema()]
 ---
 
 <Layout locale={locale} jsonLd={homepageJsonLd}>

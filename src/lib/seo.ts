@@ -139,6 +139,29 @@ export function buildFaqSchema(items: Array<{ question: string; answer: string }
   }
 }
 
+export function buildWebSiteSchema(): JsonLd {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: siteName,
+    url: siteOrigin,
+    description: 'Feedback management software for product teams to collect ideas, prioritize requests, publish roadmaps, and close the loop.',
+    publisher: {
+      '@type': 'Organization',
+      name: siteName,
+      logo: {
+        '@type': 'ImageObject',
+        url: getAbsoluteUrl('/veerify.svg'),
+      },
+    },
+    potentialAction: {
+      '@type': 'SearchAction',
+      target: `${siteOrigin}/blog?q={search_term_string}`,
+      'query-input': 'required name=search_term_string',
+    },
+  }
+}
+
 export function buildArticleSchema(input: {
   headline: string
   description: string

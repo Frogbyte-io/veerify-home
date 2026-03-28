@@ -106,6 +106,7 @@ const robotsContent = noindex ? 'noindex, nofollow' : 'index, follow, max-image-
     ))}
     <title>{title}</title>
     <link rel="icon" type="image/svg+xml" href="/veerify.svg" />
+    <link rel="ai-plugin" href="/.well-known/ai-plugin.json" />
     <link rel="preload" href={figtreeFontUrl} as="font" type="font/woff2" crossorigin />
     <link rel="preload" href={frauncesFontUrl} as="font" type="font/woff2" crossorigin />
     {serializedJsonLd.map((entry) => (

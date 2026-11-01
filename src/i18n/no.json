@@ -1,14 +1,14 @@
 {
   "layout": {
-    "title": "Veerify - Tilbakemeldinger, roadmap og innboks på ett sted",
-    "description": "Veerify er arbeidsområdet med åpen kildekode for produktteam: tilbakemeldingstavler, stemmer, offentlige roadmaps, changelogs og en delt innboks for e-post på ditt eget domene.",
-    "ogDescription": "Samle tilbakemeldinger, publiser roadmap og changelog, og svar kundene fra en delt innboks på ditt eget domene."
+    "title": "Veerify - Feedback, roadmap og innboks på ett sted",
+    "description": "Veerify er arbeidsområdet med åpen kildekode for produktteam: feedback boards, stemmer, offentlige roadmaps, changelogs og en delt innboks for e-post på ditt eget domene.",
+    "ogDescription": "Samle feedback, publiser roadmap og changelog, og svar kundene fra en delt innboks på ditt eget domene."
   },
   "navbar": {
     "features": "Funksjoner",
     "howItWorks": "Slik fungerer det",
     "pricing": "Priser",
-    "feedback": "Tilbakemeldinger",
+    "feedback": "Feedback",
     "signIn": "Logg inn",
     "getStartedFree": "Start gratis",
     "darkModeToggle": "Bytt mørk modus",
@@ -22,10 +22,10 @@
   },
   "hero": {
     "betaPill": "Nytt: delt innboks og e-post på ditt domene",
-    "headlineTop": "Tilbakemeldinger",
+    "headlineTop": "Feedback",
     "headlineAccent": "som faktisk",
     "headlineBottom": "blir til produkt.",
-    "subtext": "Veerify samler tilbakemeldinger, roadmap, changelog og en delt innboks for e-posten din i ett arbeidsområde med åpen kildekode - så du alltid vet hva du skal bygge, og hvem som venter på det.",
+    "subtext": "Veerify samler feedback, roadmap, changelog og en delt innboks for e-posten din i ett arbeidsområde med åpen kildekode - så du alltid vet hva du skal bygge, og hvem som venter på det.",
     "startFree": "Start gratis",
     "seeHowItWorks": "Se hvordan det fungerer",
     "trustSignals": {
@@ -38,10 +38,10 @@
     "sectionLabel": "Funksjoner",
     "headingTop": "Ett arbeidsområde.",
     "headingBottom": "Alle samtaler med brukerne dine.",
-    "intro": "Slå på verktøyene hvert prosjekt trenger. Tilbakemeldinger, roadmap, changelog, innboks og markedsføring deler de samme brukerne, produktene og dataene.",
+    "intro": "Slå på verktøyene hvert prosjekt trenger. Feedback, roadmap, changelog, innboks og markedsføring deler de samme brukerne, produktene og dataene.",
     "items": {
       "0": {
-        "title": "Tilbakemeldingstavler",
+        "title": "Feedback boards",
         "desc": "En offentlig tavle per produkt med et veiledet skjema, vedlegg og delbare lenker. Bygg den inn i appen eller del lenken."
       },
       "1": {
@@ -70,7 +70,7 @@
       },
       "7": {
         "title": "GitHub-integrasjon",
-        "desc": "Gjør tilbakemeldinger om til GitHub-issues automatisk, og marker dem som fullført når issuen lukkes."
+        "desc": "Gjør feedback om til GitHub-issues automatisk, og marker dem som fullført når issuen lukkes."
       },
       "8": {
         "title": "API, MCP og import",
@@ -82,7 +82,7 @@
     "sectionLabel": "Innboks og e-post",
     "headingTop": "Din delte innboks,",
     "headingAccent": "på ditt eget domene.",
-    "intro": "Kundestøtte, salgsspørsmål og vanlig e-post havner i én innboks ved siden av tilbakemeldingene. Koble til et domene, lag adresser, og svar fra adressen kunden skrev til.",
+    "intro": "Kundestøtte, salgsspørsmål og vanlig e-post havner i én innboks ved siden av feedbacken. Koble til et domene, lag adresser, og svar fra adressen kunden skrev til.",
     "points": {
       "0": {
         "title": "Én innboks for alt",
@@ -101,8 +101,8 @@
         "desc": "Videresend til en hvilken som helst bekreftet adresse og svar fra mottakeradressen. Spam og virus videresendes aldri."
       },
       "4": {
-        "title": "Koblet til tilbakemeldinger",
-        "desc": "Gjør en samtale om til en tilbakemelding med ett klikk, med kontaktens historikk rett ved siden av tråden."
+        "title": "Koblet til feedback",
+        "desc": "Gjør en samtale om til feedback med ett klikk, med kontaktens historikk rett ved siden av tråden."
       }
     },
     "cta": "Sett opp innboksen",
@@ -150,7 +150,7 @@
           "from": "Ingrid Berg",
           "subject": "Kan dere lage en Slack-integrasjon?",
           "to": "support@",
-          "badge": "Tilbakemelding",
+          "badge": "Feedback",
           "time": "1t"
         }
       }
@@ -164,7 +164,7 @@
       "0": {
         "number": "01",
         "title": "Samle",
-        "desc": "Del en offentlig tavle, bygg den inn i appen, eller send e-posten din til innboksen. Tilbakemeldinger og samtaler havner på ett sted fra dag én."
+        "desc": "Del en offentlig tavle, bygg den inn i appen, eller send e-posten din til innboksen. Feedback og samtaler havner på ett sted fra dag én."
       },
       "1": {
         "number": "02",
@@ -192,7 +192,7 @@
     "features": {
       "0": "Ubegrenset antall prosjekter og produkter",
       "1": "Ubegrenset antall teammedlemmer",
-      "2": "Tilbakemeldingstavler og stemmer",
+      "2": "Feedback boards og stemmer",
       "3": "Offentlig roadmap og changelog",
       "4": "Delt innboks med SLA-er og CSAT",
       "5": "REST-API og MCP-server",
@@ -218,7 +218,7 @@
       },
       "2": {
         "title": "MCP-server for AI-agenter",
-        "description": "Koble til Claude Code eller en annen MCP-klient. Agenter kan sortere tilbakemeldinger, administrere e-postinnstillinger og importere data for deg."
+        "description": "Koble til Claude Code eller en annen MCP-klient. Agenter kan sortere feedback, administrere e-postinnstillinger og importere data for deg."
       },
       "3": {
         "title": "Ingen lock-in",
@@ -226,7 +226,7 @@
       },
       "4": {
         "title": "Klar på 5 minutter",
-        "description": "Del en lenke til den offentlige tavlen eller bygg den inn på nettstedet. Importer tilbakemeldinger, stemmer og kommentarer fra Canny."
+        "description": "Del en lenke til den offentlige tavlen eller bygg den inn på nettstedet. Importer feedback, stemmer og kommentarer fra Canny."
       }
     },
     "userBenefits": {
@@ -278,7 +278,7 @@
     "items": {
       "0": {
         "question": "Hva er Veerify?",
-        "answer": "Veerify er et verktøy med åpen kildekode for produktteam. Det samler offentlige tilbakemeldingstavler med stemmer, en offentlig roadmap, en changelog og en delt innboks for kunde-e-post, slik at ønsker og kundestøtte er på ett sted."
+        "answer": "Veerify er et verktøy med åpen kildekode for produktteam. Det samler offentlige feedback boards med stemmer, en offentlig roadmap, en changelog og en delt innboks for kunde-e-post, slik at ønsker og kundestøtte er på ett sted."
       },
       "1": {
         "question": "Er Veerify gratis?",
@@ -294,7 +294,7 @@
       },
       "4": {
         "question": "Kan Veerify erstatte Canny?",
-        "answer": "For de fleste team, ja. Veerify har tilbakemeldingstavler, stemmer, offentlig roadmap og changelog. Du kan importere innlegg, kommentarer, stemmer og changelog fra Canny via MCP-serveren, med forhåndsvisning før noe lagres. Canny har flere tredjepartsintegrasjoner."
+        "answer": "For de fleste team, ja. Veerify har feedback boards, stemmer, offentlig roadmap og changelog. Du kan importere innlegg, kommentarer, stemmer og changelog fra Canny via MCP-serveren, med forhåndsvisning før noe lagres. Canny har flere tredjepartsintegrasjoner."
       },
       "5": {
         "question": "Erstatter Veerify en helpdesk?",
@@ -329,7 +329,7 @@
     "closeLabel": "Lukk",
     "commentsLabel": "Kommentarer",
     "defaultDetailTitle": "Detaljer",
-    "defaultDetailMetaType": "Tilbakemelding",
+    "defaultDetailMetaType": "Feedback",
     "defaultDetailMetaStatus": "Åpen",
     "defaultComments": {
       "0": { "name": "Bruker 1", "text": "Ser lovende ut." },
@@ -403,7 +403,7 @@
     "features": "Funksjoner",
     "pricing": "Priser",
     "howItWorks": "Slik fungerer det",
-    "feedback": "Tilbakemeldinger",
+    "feedback": "Feedback",
     "signIn": "Logg inn",
     "about": "Om",
     "blog": "Blogg",

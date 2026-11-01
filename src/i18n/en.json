@@ -1,8 +1,8 @@
 {
   "layout": {
-    "title": "Veerify - Feedback that matters",
-    "description": "Veerify - Collect feedback that actually matters. The modern feedback management platform for product teams.",
-    "ogDescription": "Collect, organize, and act on user feedback. Always know what to build next."
+    "title": "Veerify - Feedback, roadmap and inbox in one place",
+    "description": "Veerify is the open-source workspace for product teams: feedback boards, voting, public roadmaps, changelogs, and a shared inbox for email on your own domain.",
+    "ogDescription": "Collect feedback, publish your roadmap and changelog, and answer customers from a shared inbox on your own domain."
   },
   "navbar": {
     "features": "Features",
@@ -17,51 +17,142 @@
     "languageNames": {
       "en": "English",
       "no": "Norwegian"
-    }
+    },
+    "inbox": "Inbox"
   },
   "hero": {
-    "betaPill": "Open beta - free forever",
+    "betaPill": "New: shared inbox and email on your domain",
     "headlineTop": "Feedback",
     "headlineAccent": "that actually",
     "headlineBottom": "ships features.",
-    "subtext": "Veerify helps product teams collect, prioritize, and act on user feedback - so you always build the right thing next.",
+    "subtext": "Veerify brings feedback, roadmap, changelog and a shared inbox for your email into one open-source workspace - so you always know what to build next, and who is waiting for it.",
     "startFree": "Start for free",
     "seeHowItWorks": "See how it works",
     "trustSignals": {
       "0": "Free forever during beta",
-      "1": "Unlimited projects",
+      "1": "Open source",
       "2": "5-minute setup"
     }
   },
   "features": {
     "sectionLabel": "Features",
-    "headingTop": "Everything you need.",
-    "headingBottom": "Nothing you don't.",
-    "intro": "A focused toolkit for collecting signal, removing noise, and shipping what users actually care about.",
+    "headingTop": "One workspace.",
+    "headingBottom": "Every conversation with your users.",
+    "intro": "Switch on the tools each project needs. Feedback, roadmap, changelog, inbox and marketing share the same users, products and data.",
     "items": {
       "0": {
-        "title": "Feedback Collection",
-        "desc": "Embed a widget anywhere or share a public link. Capture ideas, bugs, and feature requests from users in context."
+        "title": "Feedback boards",
+        "desc": "A public board per product with a guided submit form, attachments and shareable links. Embed it in your app or share the URL."
       },
       "1": {
-        "title": "Voting & Prioritization",
-        "desc": "Let users vote on what matters most. Automatically surface your highest-impact opportunities and drop the noise."
+        "title": "Voting & prioritization",
+        "desc": "Let users vote on what matters most. Sort by demand, switch between table and kanban views, and export to CSV."
       },
       "2": {
-        "title": "Public Roadmap",
-        "desc": "Show users where you're headed. Build trust by publishing your roadmap and closing the feedback loop automatically."
+        "title": "Public roadmap",
+        "desc": "A kanban-style roadmap, filterable by product, that shows users what is planned, in progress and shipped."
       },
       "3": {
-        "title": "Team Workflows",
-        "desc": "Organize feedback by project, assign owners, and track status across your team - all in a single place."
+        "title": "Changelog",
+        "desc": "Publish release notes to a public page with an RSS feed, and tell the people who asked when their request ships."
       },
       "4": {
-        "title": "Insights & Reports",
-        "desc": "Understand trends over time. See which themes surface repeatedly and make confident decisions with real data."
+        "title": "Shared inbox",
+        "desc": "Support and email in one inbox: assign, snooze, archive, canned responses, SLAs, contacts and satisfaction surveys."
       },
       "5": {
-        "title": "Auto Notifications",
-        "desc": "Close the loop automatically. Notify users the moment their requested feature ships so nothing falls through."
+        "title": "Email on your domain",
+        "desc": "Connect any domain and create addresses like hello@ or support@, plus a catch-all. Forward anywhere and reply from the same address."
+      },
+      "6": {
+        "title": "Marketing hub",
+        "desc": "Audit your site, track how AI assistants recommend you, monitor mentions and competitors, and collect reviews and testimonials."
+      },
+      "7": {
+        "title": "GitHub integration",
+        "desc": "Turn feedback into GitHub issues automatically, and mark it complete when the linked issue closes."
+      },
+      "8": {
+        "title": "API, MCP & imports",
+        "desc": "Connect Claude or any MCP client with a personal API key, use the REST API, and move your data over from Canny."
+      }
+    }
+  },
+  "inbox": {
+    "sectionLabel": "Inbox & email",
+    "headingTop": "Your shared inbox,",
+    "headingAccent": "on your own domain.",
+    "intro": "Support requests, sales questions and plain email land in one inbox next to your feedback. Connect a domain, create addresses, and answer from the address your customer wrote to.",
+    "points": {
+      "0": {
+        "title": "One inbox for everything",
+        "desc": "Assign, snooze, archive or mark as spam. Folders, address filters and a details panel keep busy days calm."
+      },
+      "1": {
+        "title": "Addresses on any domain",
+        "desc": "Add hello@, support@ or a catch-all. Use a subdomain to keep Google Workspace or your current mail provider."
+      },
+      "2": {
+        "title": "Mail or helpdesk, per address",
+        "desc": "Helpdesk addresses get auto-replies, SLAs, automation rules and satisfaction surveys. Mail addresses stay quiet."
+      },
+      "3": {
+        "title": "Forward and reply as you",
+        "desc": "Forward to any confirmed address and reply from the receiving address. Spam and viruses are never forwarded."
+      },
+      "4": {
+        "title": "Connected to feedback",
+        "desc": "Turn a conversation into feedback in one click, with each contact's history right beside the thread."
+      }
+    },
+    "cta": "Set up your inbox",
+    "mock": {
+      "title": "Inbox",
+      "addressesLabel": "Addresses",
+      "conversationsLabel": "Open conversations",
+      "behaviorMail": "Mail",
+      "behaviorHelpdesk": "Helpdesk",
+      "catchAll": "Catch-all",
+      "forwardsTo": "Forwards to",
+      "addresses": {
+        "0": {
+          "address": "hello@acme.com",
+          "behavior": "mail",
+          "forward": "ceo@acme.com"
+        },
+        "1": {
+          "address": "support@acme.com",
+          "behavior": "helpdesk",
+          "forward": ""
+        },
+        "2": {
+          "address": "*@acme.com",
+          "behavior": "catchAll",
+          "forward": ""
+        }
+      },
+      "conversations": {
+        "0": {
+          "from": "Maya Chen",
+          "subject": "CSV export fails on Safari",
+          "to": "support@",
+          "badge": "SLA 1h 42m",
+          "time": "2m"
+        },
+        "1": {
+          "from": "Leo Hart",
+          "subject": "Partnership with Acme?",
+          "to": "hello@",
+          "badge": "",
+          "time": "18m"
+        },
+        "2": {
+          "from": "Iris Berg",
+          "subject": "Can we get a Slack integration?",
+          "to": "support@",
+          "badge": "Feedback",
+          "time": "1h"
+        }
       }
     }
   },
@@ -73,7 +164,7 @@
       "0": {
         "number": "01",
         "title": "Collect",
-        "desc": "Add Veerify to your app in minutes or share a public link. Start receiving structured feedback from users from day one."
+        "desc": "Share a public board, embed it in your app, or point your email at the inbox. Feedback and conversations land in one place from day one."
       },
       "1": {
         "number": "02",
@@ -83,7 +174,7 @@
       "2": {
         "number": "03",
         "title": "Deliver",
-        "desc": "Ship it, update your roadmap, and notify users automatically. The feedback loop closes. Trust compounds."
+        "desc": "Ship it, publish it to the changelog and roadmap, and tell everyone who asked. The feedback loop closes. Trust compounds."
       }
     }
   },
@@ -99,12 +190,12 @@
     "priceHint": "Free forever during beta. Fair pricing when we launch.",
     "cta": "Get started - it's free",
     "features": {
-      "0": "Unlimited feedback projects",
+      "0": "Unlimited projects and products",
       "1": "Unlimited team members",
-      "2": "Public roadmap pages",
-      "3": "Voting & prioritization",
-      "4": "User notifications",
-      "5": "API access",
+      "2": "Feedback boards and voting",
+      "3": "Public roadmap and changelog",
+      "4": "Shared inbox with SLAs and CSAT",
+      "5": "REST API and MCP server",
       "6": "Priority support during beta"
     }
   },
@@ -118,16 +209,16 @@
     "tabUsers": "For Users",
     "developerBenefits": {
       "0": {
-        "title": "Full REST API access",
-        "description": "Integrate feedback directly into your existing tools and workflows with a clean, well-documented API."
+        "title": "REST API with an OpenAPI spec",
+        "description": "Every dashboard action is available over the API. Personal API keys, scoped to exactly your permissions."
       },
       "1": {
         "title": "Open source & self-hostable",
         "description": "Inspect, fork, and contribute to the codebase. Host Veerify on your own infrastructure with complete control."
       },
       "2": {
-        "title": "Webhooks & event streams",
-        "description": "React to new feedback, votes, and status changes in real time via outbound webhooks to any endpoint."
+        "title": "MCP server for AI agents",
+        "description": "Connect Claude Code or any MCP client. Agents can triage feedback, manage mail settings and import data for you."
       },
       "3": {
         "title": "No vendor lock-in",
@@ -135,7 +226,7 @@
       },
       "4": {
         "title": "5-minute setup",
-        "description": "Add a feedback widget to any product with a single script tag or our lightweight npm package."
+        "description": "Share a public board link or embed it on your site. Import existing feedback, votes and comments from Canny."
       }
     },
     "userBenefits": {
@@ -153,11 +244,11 @@
       },
       "3": {
         "title": "Stay in the loop automatically",
-        "description": "Get notified when a feature you voted for moves to \"In Progress\" or ships to production."
+        "description": "Get notified when a feature you voted for moves to \"In progress\" or shows up in the changelog."
       },
       "4": {
-        "title": "Simple and fast to use",
-        "description": "Submit feedback in seconds - no accounts required on public boards. Just say what you need."
+        "title": "Help that answers",
+        "description": "Email support and get a reply from a real person, with the full conversation in one thread."
       }
     },
     "callouts": {
@@ -165,8 +256,8 @@
         "stat": "5 min",
         "label": "Average integration time",
         "tags": {
-          "0": "REST API + webhooks",
-          "1": "Open source - MIT License",
+          "0": "REST API + MCP",
+          "1": "Open source - AGPL-3.0",
           "2": "Self-host or cloud"
         }
       },

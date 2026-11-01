@@ -19,7 +19,7 @@ export const GET: APIRoute = async () => {
 
 > Collect feedback that actually matters. The modern feedback management platform for product teams.
 
-Veerify helps product teams collect, prioritize, and act on user feedback so they always build the right thing next. It includes embeddable feedback widgets, user voting and prioritization, public roadmaps, team workflows, insights, and automatic user notifications when requested features ship.
+Veerify helps product teams collect, prioritize, and act on user feedback so they always build the right thing next. It includes public feedback boards with voting, public roadmaps, changelogs, a shared inbox for support and email on your own domain (addresses, catch-all, forwarding), a marketing hub (site audit, AI visibility, mentions, reviews), GitHub issue sync, a REST API, an MCP server for AI agents, and imports from Canny. It is open source (AGPL-3.0) and can be self-hosted.
 
 Currently in open beta — free forever during the beta period.
 

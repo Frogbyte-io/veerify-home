@@ -102,7 +102,7 @@ export function buildSoftwareApplicationSchema(): JsonLd {
     operatingSystem: 'Web',
     url: siteOrigin,
     image: getAbsoluteUrl(defaultSocialImagePath),
-    description: 'Feedback management software for product teams to collect ideas, prioritize requests, publish roadmaps, and close the loop.',
+    description: 'Open-source feedback management and shared inbox for product teams: collect ideas, prioritize requests, publish roadmaps and changelogs, and answer customer email on your own domain.',
     offers: {
       '@type': 'Offer',
       price: '0',
@@ -145,7 +145,7 @@ export function buildWebSiteSchema(): JsonLd {
     '@type': 'WebSite',
     name: siteName,
     url: siteOrigin,
-    description: 'Feedback management software for product teams to collect ideas, prioritize requests, publish roadmaps, and close the loop.',
+    description: 'Open-source feedback management and shared inbox for product teams: collect ideas, prioritize requests, publish roadmaps and changelogs, and answer customer email on your own domain.',
     publisher: {
       '@type': 'Organization',
       name: siteName,

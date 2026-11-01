@@ -1,8 +1,8 @@
 {
   "layout": {
-    "title": "Veerify – Tilbakemeldinger som driver produktet fremover",
-    "description": "Veerify hjelper deg å samle inn og prioritere tilbakemeldinger som faktisk betyr noe. En moderne plattform for produktteam.",
-    "ogDescription": "Samle inn, forstå og handle på brukerinnsikt. Vit alltid hva som bør bygges videre."
+    "title": "Veerify - Tilbakemeldinger, veikart og innboks på ett sted",
+    "description": "Veerify er arbeidsområdet med åpen kildekode for produktteam: tilbakemeldingstavler, stemmer, offentlige veikart, endringslogger og en delt innboks for e-post på ditt eget domene.",
+    "ogDescription": "Samle tilbakemeldinger, publiser veikart og endringslogg, og svar kundene fra en delt innboks på ditt eget domene."
   },
   "navbar": {
     "features": "Funksjoner",
@@ -17,51 +17,142 @@
     "languageNames": {
       "en": "Engelsk",
       "no": "Norsk"
-    }
+    },
+    "inbox": "Innboks"
   },
   "hero": {
-    "betaPill": "Åpen beta – gratis",
+    "betaPill": "Nytt: delt innboks og e-post på ditt domene",
     "headlineTop": "Tilbakemeldinger",
     "headlineAccent": "som faktisk",
     "headlineBottom": "blir til produkt.",
-    "subtext": "Veerify gir produktteam oversikt over hva brukerne ønsker – og hva som faktisk bør prioriteres videre.",
+    "subtext": "Veerify samler tilbakemeldinger, veikart, endringslogg og en delt innboks for e-posten din i ett arbeidsområde med åpen kildekode - så du alltid vet hva du skal bygge, og hvem som venter på det.",
     "startFree": "Start gratis",
     "seeHowItWorks": "Se hvordan det fungerer",
     "trustSignals": {
-      "0": "Gratis i beta",
-      "1": "Ubegrensede prosjekter",
-      "2": "Kom i gang på minutter"
+      "0": "Gratis for alltid i beta",
+      "1": "Åpen kildekode",
+      "2": "Klar på 5 minutter"
     }
   },
   "features": {
     "sectionLabel": "Funksjoner",
-    "headingTop": "Alt du trenger.",
-    "headingBottom": "Ingenting overflødig.",
-    "intro": "Et fokusert verktøy for å hente ut signal fra støy – og bygge det brukerne faktisk etterspør.",
+    "headingTop": "Ett arbeidsområde.",
+    "headingBottom": "Alle samtaler med brukerne dine.",
+    "intro": "Slå på verktøyene hvert prosjekt trenger. Tilbakemeldinger, veikart, endringslogg, innboks og markedsføring deler de samme brukerne, produktene og dataene.",
     "items": {
       "0": {
-        "title": "Samle inn feedback",
-        "desc": "Legg inn en widget i produktet eller del en lenke. Fang opp ideer, feil og ønsker der brukerne faktisk er."
+        "title": "Tilbakemeldingstavler",
+        "desc": "En offentlig tavle per produkt med et veiledet skjema, vedlegg og delbare lenker. Bygg den inn i appen eller del lenken."
       },
       "1": {
-        "title": "Prioriter det riktige",
-        "desc": "La brukerne stemme. Få tydelig signal på hva som gir mest verdi – og hva som kan vente."
+        "title": "Stemmer og prioritering",
+        "desc": "La brukerne stemme på det som betyr mest. Sorter etter etterspørsel, bytt mellom tabell- og kanbanvisning, og eksporter til CSV."
       },
       "2": {
-        "title": "Del roadmap",
-        "desc": "Vis hva dere jobber med og hva som kommer. Skap forutsigbarhet og tillit hos brukerne."
+        "title": "Offentlig veikart",
+        "desc": "Et veikart i kanbanstil, filtrert per produkt, som viser hva som er planlagt, pågår og er levert."
       },
       "3": {
-        "title": "Struktur for teamet",
-        "desc": "Samle alt på ett sted. Fordel ansvar, følg status og hold oversikt på tvers av teamet."
+        "title": "Endringslogg",
+        "desc": "Publiser versjonsnotater på en offentlig side med RSS-feed, og gi beskjed til dem som ba om det når det er levert."
       },
       "4": {
-        "title": "Innsikt over tid",
-        "desc": "Se mønstre i feedbacken. Ta beslutninger basert på hva som faktisk går igjen hos brukerne."
+        "title": "Delt innboks",
+        "desc": "Kundestøtte og e-post i én innboks: tildel, utsett, arkiver, ferdige svar, SLA-er, kontakter og tilfredshetsundersøkelser."
       },
       "5": {
-        "title": "Automatiske oppdateringer",
-        "desc": "Gi beskjed når noe er levert. Hold brukerne i loopen uten ekstra manuelt arbeid."
+        "title": "E-post på ditt domene",
+        "desc": "Koble til et hvilket som helst domene og lag adresser som hei@ eller support@, pluss en catch-all. Videresend hvor som helst og svar fra samme adresse."
+      },
+      "6": {
+        "title": "Markedsføringshub",
+        "desc": "Analyser nettstedet, følg med på hvordan AI-assistenter anbefaler deg, overvåk omtaler og konkurrenter, og samle anmeldelser og attester."
+      },
+      "7": {
+        "title": "GitHub-integrasjon",
+        "desc": "Gjør tilbakemeldinger om til GitHub-issues automatisk, og marker dem som fullført når issuen lukkes."
+      },
+      "8": {
+        "title": "API, MCP og import",
+        "desc": "Koble til Claude eller en annen MCP-klient med en personlig API-nøkkel, bruk REST-API-et, og flytt dataene dine fra Canny."
+      }
+    }
+  },
+  "inbox": {
+    "sectionLabel": "Innboks og e-post",
+    "headingTop": "Din delte innboks,",
+    "headingAccent": "på ditt eget domene.",
+    "intro": "Kundestøtte, salgsspørsmål og vanlig e-post havner i én innboks ved siden av tilbakemeldingene. Koble til et domene, lag adresser, og svar fra adressen kunden skrev til.",
+    "points": {
+      "0": {
+        "title": "Én innboks for alt",
+        "desc": "Tildel, utsett, arkiver eller merk som spam. Mapper, adressefiltre og et detaljpanel gir ro på travle dager."
+      },
+      "1": {
+        "title": "Adresser på hvilket som helst domene",
+        "desc": "Legg til hei@, support@ eller en catch-all. Bruk et underdomene for å beholde Google Workspace eller nåværende e-postleverandør."
+      },
+      "2": {
+        "title": "E-post eller kundestøtte, per adresse",
+        "desc": "Kundestøtteadresser får autosvar, SLA-er, automatiseringsregler og tilfredshetsundersøkelser. E-postadresser holder seg stille."
+      },
+      "3": {
+        "title": "Videresend og svar som deg selv",
+        "desc": "Videresend til en hvilken som helst bekreftet adresse og svar fra mottakeradressen. Spam og virus videresendes aldri."
+      },
+      "4": {
+        "title": "Koblet til tilbakemeldinger",
+        "desc": "Gjør en samtale om til en tilbakemelding med ett klikk, med kontaktens historikk rett ved siden av tråden."
+      }
+    },
+    "cta": "Sett opp innboksen",
+    "mock": {
+      "title": "Innboks",
+      "addressesLabel": "Adresser",
+      "conversationsLabel": "Åpne samtaler",
+      "behaviorMail": "E-post",
+      "behaviorHelpdesk": "Kundestøtte",
+      "catchAll": "Catch-all",
+      "forwardsTo": "Videresendes til",
+      "addresses": {
+        "0": {
+          "address": "hei@acme.no",
+          "behavior": "mail",
+          "forward": "daglig@acme.no"
+        },
+        "1": {
+          "address": "support@acme.no",
+          "behavior": "helpdesk",
+          "forward": ""
+        },
+        "2": {
+          "address": "*@acme.no",
+          "behavior": "catchAll",
+          "forward": ""
+        }
+      },
+      "conversations": {
+        "0": {
+          "from": "Maja Olsen",
+          "subject": "CSV-eksport feiler i Safari",
+          "to": "support@",
+          "badge": "SLA 1t 42m",
+          "time": "2m"
+        },
+        "1": {
+          "from": "Lars Hagen",
+          "subject": "Samarbeid med Acme?",
+          "to": "hei@",
+          "badge": "",
+          "time": "18m"
+        },
+        "2": {
+          "from": "Ingrid Berg",
+          "subject": "Kan dere lage en Slack-integrasjon?",
+          "to": "support@",
+          "badge": "Tilbakemelding",
+          "time": "1t"
+        }
       }
     }
   },
@@ -73,7 +164,7 @@
       "0": {
         "number": "01",
         "title": "Samle",
-        "desc": "Start raskt med widget eller lenke. Få strukturert feedback fra første dag."
+        "desc": "Del en offentlig tavle, bygg den inn i appen, eller send e-posten din til innboksen. Tilbakemeldinger og samtaler havner på ett sted fra dag én."
       },
       "1": {
         "number": "02",
@@ -83,7 +174,7 @@
       "2": {
         "number": "03",
         "title": "Lever",
-        "desc": "Ship, oppdater roadmap og varsle brukerne. Loopen er lukket."
+        "desc": "Lever, publiser i endringsloggen og veikartet, og gi beskjed til alle som spurte. Tilbakemeldingssløyfen lukkes. Tilliten vokser."
       }
     }
   },
@@ -99,13 +190,13 @@
     "priceHint": "Gratis i beta. Rettferdig prising senere.",
     "cta": "Start gratis",
     "features": {
-      "0": "Ubegrensede prosjekter",
-      "1": "Ubegrenset team",
-      "2": "Offentlige roadmaps",
-      "3": "Stemmegivning og prioritering",
-      "4": "Varslinger til brukere",
-      "5": "API-tilgang",
-      "6": "Prioritert support i beta"
+      "0": "Ubegrenset antall prosjekter og produkter",
+      "1": "Ubegrenset antall teammedlemmer",
+      "2": "Tilbakemeldingstavler og stemmer",
+      "3": "Offentlig veikart og endringslogg",
+      "4": "Delt innboks med SLA-er og CSAT",
+      "5": "REST-API og MCP-server",
+      "6": "Prioritert støtte i beta"
     }
   },
   "benefits": {
@@ -118,24 +209,24 @@
     "tabUsers": "For brukere",
     "developerBenefits": {
       "0": {
-        "title": "Full API-tilgang",
-        "description": "Koble feedback direkte inn i dine eksisterende systemer og workflows."
+        "title": "REST-API med OpenAPI-spesifikasjon",
+        "description": "Alt du kan gjøre i dashbordet, kan du gjøre via API-et. Personlige API-nøkler med nøyaktig dine tilganger."
       },
       "1": {
         "title": "Åpen og fleksibel",
         "description": "Se, tilpass og host selv. Full kontroll over egen stack."
       },
       "2": {
-        "title": "Webhooks og events",
-        "description": "Reager i sanntid på nye tilbakemeldinger og endringer."
+        "title": "MCP-server for AI-agenter",
+        "description": "Koble til Claude Code eller en annen MCP-klient. Agenter kan sortere tilbakemeldinger, administrere e-postinnstillinger og importere data for deg."
       },
       "3": {
         "title": "Ingen lock-in",
         "description": "Eksporter data når du vil. Du eier alt."
       },
       "4": {
-        "title": "Rask oppstart",
-        "description": "Kom i gang på minutter med enkel integrasjon."
+        "title": "Klar på 5 minutter",
+        "description": "Del en lenke til den offentlige tavlen eller bygg den inn på nettstedet. Importer tilbakemeldinger, stemmer og kommentarer fra Canny."
       }
     },
     "userBenefits": {
@@ -152,12 +243,12 @@
         "description": "Se hva som planlegges, bygges og er levert."
       },
       "3": {
-        "title": "Hold deg oppdatert",
-        "description": "Få beskjed når ting skjer."
+        "title": "Hold deg oppdatert automatisk",
+        "description": "Få beskjed når en funksjon du stemte på går til «Pågår» eller dukker opp i endringsloggen."
       },
       "4": {
-        "title": "Enkelt å bruke",
-        "description": "Send inn feedback på sekunder – uten friksjon."
+        "title": "Hjelp som svarer",
+        "description": "Send en e-post til kundestøtte og få svar fra et ekte menneske, med hele samtalen i én tråd."
       }
     },
     "callouts": {
@@ -165,9 +256,9 @@
         "stat": "5 min",
         "label": "Tid til integrasjon",
         "tags": {
-          "0": "API + webhooks",
-          "1": "Åpen kildekode",
-          "2": "Self-host eller cloud"
+          "0": "REST-API + MCP",
+          "1": "Åpen kildekode - AGPL-3.0",
+          "2": "Selvhostet eller sky"
         }
       },
       "users": {

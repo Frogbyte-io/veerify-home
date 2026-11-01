@@ -3,6 +3,7 @@ import Layout from '../../layouts/Layout.astro'
 import TheNavbar from '../../components/TheNavbar.astro'
 import HeroSection from '../../components/HeroSection.astro'
 import FeaturesSection from '../../components/FeaturesSection.astro'
+import InboxSection from '../../components/InboxSection.astro'
 import HowItWorksSection from '../../components/HowItWorksSection.astro'
 import PricingSection from '../../components/PricingSection.astro'
 import BenefitsSection from '../../components/BenefitsSection.astro'
@@ -31,6 +32,7 @@ const homepageJsonLd = [buildOrganizationSchema(), buildSoftwareApplicationSchem
   <TheNavbar locale={locale} t={dict.navbar} />
   <HeroSection locale={locale} t={dict.hero} mockup={dict.productMockup} />
   <FeaturesSection t={dict.features} />
+  <InboxSection t={dict.inbox} />
   <HowItWorksSection t={dict.howItWorks} />
   <PricingSection t={dict.pricing} />
   <BenefitsSection t={dict.benefits} />

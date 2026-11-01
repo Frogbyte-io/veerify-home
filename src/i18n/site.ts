@@ -49,6 +49,15 @@ function buildDictionary(raw: RawDict) {
       ...raw.features,
       items: vals(raw.features.items),
     },
+    inbox: {
+      ...raw.inbox,
+      points: vals(raw.inbox.points),
+      mock: {
+        ...raw.inbox.mock,
+        addresses: vals(raw.inbox.mock.addresses),
+        conversations: vals(raw.inbox.mock.conversations),
+      },
+    },
     howItWorks: {
       ...raw.howItWorks,
       steps: vals(raw.howItWorks.steps),

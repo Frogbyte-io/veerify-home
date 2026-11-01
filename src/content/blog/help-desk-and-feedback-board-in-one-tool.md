@@ -34,11 +34,11 @@ List prices from each vendor's pricing page in November 2026:
 
 | Setup | How it is priced | Three people, per month |
 | --- | --- | --- |
-| Help Scout Standard + Canny Pro | $25 per user + from $79 (yearly) | About $154 |
-| Featurebase Growth | $29 per seat | $87 |
+| Help Scout Standard + Canny Pro | $25 per user (listed) + from $79 (yearly) | About $154 |
+| Featurebase Growth | $29 per seat (yearly), $37 (monthly) | $87 to $111 |
 | Veerify | Free during beta | $0 for now |
 
-Canny's price rises with tracked users, and Help Scout charges extra for additional inboxes, so the first row usually grows faster than the others. Veerify will have paid plans after the beta. We have not set prices yet.
+Help Scout and Featurebase both give a discount for paying yearly, so check which billing period you are comparing. Canny's price rises with tracked users, and Help Scout charges extra for additional inboxes, so the first row usually grows faster than the others. Veerify will have paid plans after the beta. We have not set prices yet.
 
 ## When two tools are the right call
 

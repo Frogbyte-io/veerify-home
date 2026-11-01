@@ -9,7 +9,7 @@ faq:
   - question: "Is Veerify a Featurebase alternative?"
     answer: "Yes. Both combine feedback boards, a public roadmap, a changelog and a support inbox. Featurebase adds live chat, a help center and surveys. Veerify is open source, can be self-hosted, and lets you run email addresses on your own domain."
   - question: "How much does Featurebase cost compared to Veerify?"
-    answer: "In November 2026 Featurebase charged $29, $59 or $99 per seat per month, with a free plan for one seat. Veerify is free while it is in open beta."
+    answer: "In November 2026 Featurebase charged $29, $59 or $99 per seat per month billed yearly ($37, $75 or $129 billed monthly), with a free plan for one seat. Veerify is free while it is in open beta."
   - question: "Does Veerify have live chat?"
     answer: "No. Veerify's inbox handles email. If you need a chat widget on your site, Featurebase or a dedicated chat tool is a better fit today."
 ---
@@ -46,9 +46,9 @@ If your customers expect a chat bubble, choose Featurebase. If your support most
 
 ## 2. Pricing
 
-Featurebase charges per seat. In November 2026 that was $29 a month on Growth, $59 on Professional and $99 on Enterprise, 20% less when billed yearly. The free plan gives you one seat and one board.
+Featurebase charges per seat. In November 2026 that was $37 a month on Growth, $75 on Professional and $129 on Enterprise when billed monthly, or $29, $59 and $99 a month when billed yearly. The free plan gives you one seat and one board.
 
-For three people on Growth, that is $87 a month. For ten people on Professional, it is $590.
+For three people on Growth billed yearly, that is $87 a month. For ten people on Professional, it is $590 a month billed yearly, or $750 billed monthly.
 
 Veerify is free while it is in open beta, with unlimited projects and team members. We will charge once the beta ends. We have not published final prices yet, and we would rather say that than make up a number.
 

@@ -62,7 +62,7 @@
       },
       "5": {
         "title": "Email on your domain",
-        "desc": "Connect any domain and create addresses like hello@ or support@, plus a catch-all. Forward anywhere and reply from the same address."
+        "desc": "Connect any domain and create addresses like hello@ or support@, plus a catch-all. Forward to anyone, and reply from the address the customer wrote to."
       },
       "6": {
         "title": "Marketing hub",
@@ -98,7 +98,7 @@
       },
       "3": {
         "title": "Forward and reply as you",
-        "desc": "Forward to any confirmed address and reply from the receiving address. Spam and viruses are never forwarded."
+        "desc": "Forward to any confirmed address. Replies go out from the address the customer wrote to. Spam and viruses are never forwarded."
       },
       "4": {
         "title": "Connected to feedback",

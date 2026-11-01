@@ -31,7 +31,7 @@ If neither of those bothers you, Canny is a safe choice. It is mature, has lots 
 | Tool | Starts at | Free plan | Open source | Support inbox |
 | --- | --- | --- | --- | --- |
 | Canny | $79/mo (yearly) | 25 tracked users | No | No, integrates with help desks |
-| Featurebase | $29 per seat/mo | 1 seat, 1 board | No | Yes, with live chat and help center |
+| Featurebase | $29 per seat/mo (yearly) | 1 seat, 1 board | No | Yes, with live chat and help center |
 | Frill | $25/mo | No, 14-day trial | No | Not on the core plans |
 | Nolt | Paid plans only | No | No | No |
 | Fider | Free cloud, $25 Pro | Up to ~250 items | Yes, AGPL-3.0 | No |
@@ -39,7 +39,7 @@ If neither of those bothers you, Canny is a safe choice. It is mature, has lots 
 
 ## Featurebase
 
-Featurebase is the closest thing to Canny with a help desk built in. You get boards, a roadmap, a changelog, surveys, live chat, a ticket inbox and a help center. Pricing is per seat: $29, $59 or $99 a month depending on the plan. For a team of two or three, that is cheaper than Canny. For a team of fifteen, it might not be.
+Featurebase is the closest thing to Canny with a help desk built in. You get boards, a roadmap, a changelog, surveys, live chat, a ticket inbox and a help center. Pricing is per seat: $29, $59 or $99 a month billed yearly, or $37, $75 or $129 billed monthly, depending on the plan. For a team of two or three, that is cheaper than Canny. For a team of fifteen, it might not be.
 
 Pick it if you want live chat and a knowledge base in the same product as your roadmap. We wrote a [longer Featurebase comparison](/blog/featurebase-vs-veerify) if that is where you are leaning.
 

@@ -62,7 +62,7 @@
       },
       "5": {
         "title": "E-post på ditt domene",
-        "desc": "Koble til et hvilket som helst domene og lag adresser som hei@ eller support@, pluss en catch-all. Videresend hvor som helst og svar fra samme adresse."
+        "desc": "Koble til et hvilket som helst domene og lag adresser som hei@ eller support@, pluss en catch-all. Videresend til hvem som helst, og svar fra adressen kunden skrev til."
       },
       "6": {
         "title": "Markedsføringshub",
@@ -98,7 +98,7 @@
       },
       "3": {
         "title": "Videresend og svar som deg selv",
-        "desc": "Videresend til en hvilken som helst bekreftet adresse og svar fra mottakeradressen. Spam og virus videresendes aldri."
+        "desc": "Videresend til en hvilken som helst bekreftet adresse. Svar sendes fra adressen kunden skrev til. Spam og virus videresendes aldri."
       },
       "4": {
         "title": "Koblet til feedback",

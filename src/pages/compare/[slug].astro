@@ -98,7 +98,9 @@ const jsonLd = [
     {relatedPosts.length > 0 && (
       <section class="mt-16">
         <p class="mb-3 text-xs font-semibold uppercase tracking-[0.15em] text-primary">Read more</p>
-        <h2 class="font-display text-3xl font-bold tracking-tight">The longer comparison</h2>
+        <h2 class="font-display text-3xl font-bold tracking-tight">
+          {relatedPosts.length > 1 ? 'Longer comparisons' : 'The longer comparison'}
+        </h2>
         <div class="mt-8 grid grid-cols-1 gap-5 md:grid-cols-2">
           {relatedPosts.map((post) => (
             <a

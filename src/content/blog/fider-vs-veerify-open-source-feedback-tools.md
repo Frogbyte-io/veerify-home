@@ -2,7 +2,7 @@
 title: "Fider vs Veerify: picking an open-source feedback tool"
 description: "Fider and Veerify are both AGPL-3.0 and both self-hostable. One is a small, focused voting board. The other adds roadmap, changelog and a support inbox. How to choose."
 pubDate: 2026-11-01
-author: "Veerify Team"
+author: "Andreas F"
 tags: ["comparison", "open source", "self-hosted", "fider alternative"]
 competitors: ["Fider"]
 faq:

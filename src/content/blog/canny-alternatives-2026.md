@@ -2,7 +2,7 @@
 title: "Canny alternatives in 2026: what we would pick, and when"
 description: "An honest look at Canny, Featurebase, Frill, Nolt, Fider and Veerify, with November 2026 prices and the cases where each one is the right call."
 pubDate: 2026-11-01
-author: "Veerify Team"
+author: "Andreas F"
 tags: ["comparison", "canny alternative", "feedback tools"]
 competitors: ["Canny", "Featurebase", "Nolt", "Fider"]
 faq:

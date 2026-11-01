@@ -206,7 +206,7 @@ export function buildArticleSchema(input: {
     url: getAbsoluteUrl(path),
     image: getAbsoluteUrl(defaultSocialImagePath),
     author: {
-      '@type': 'Organization',
+      '@type': author === 'Veerify Team' ? 'Organization' : 'Person',
       name: author,
     },
     publisher: {

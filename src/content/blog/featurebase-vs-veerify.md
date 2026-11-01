@@ -2,7 +2,7 @@
 title: "Featurebase vs Veerify: two tools that put feedback and support together"
 description: "Featurebase and Veerify both combine feature voting, roadmaps, changelogs and a support inbox. Here is where they differ, from pricing to live chat to self-hosting."
 pubDate: 2026-11-01
-author: "Veerify Team"
+author: "Andreas F"
 tags: ["comparison", "featurebase alternative", "support inbox"]
 competitors: ["Featurebase"]
 faq:

@@ -2,7 +2,7 @@
 title: "Help desk and feedback board: one tool or two?"
 description: "Help Scout plus Canny, Featurebase, or Veerify. What it costs a three-person team to handle support email and feature requests, and when two tools are still the better choice."
 pubDate: 2026-11-01
-author: "Veerify Team"
+author: "Andreas F"
 tags: ["comparison", "help desk", "help scout alternative", "customer support"]
 competitors: ["Help Scout", "Canny", "Featurebase"]
 faq:

@@ -29,7 +29,7 @@
     "startFree": "Start for free",
     "seeHowItWorks": "See how it works",
     "trustSignals": {
-      "0": "Free forever during beta",
+      "0": "Free during beta",
       "1": "Open source",
       "2": "5-minute setup"
     }
@@ -187,7 +187,7 @@
     "badge": "Beta Access",
     "price": "$0",
     "perMonth": "/month",
-    "priceHint": "Free forever during beta. Fair pricing when we launch.",
+    "priceHint": "Free while we are in beta. Fair pricing when we launch, announced well in advance.",
     "cta": "Get started - it's free",
     "features": {
       "0": "Unlimited projects and products",
@@ -222,7 +222,7 @@
       },
       "3": {
         "title": "No vendor lock-in",
-        "description": "Export all your data at any time in standard formats. Your feedback belongs to you, always."
+        "description": "Export feedback to CSV whenever you want, or pull everything out through the API. Your data belongs to you."
       },
       "4": {
         "title": "5-minute setup",
@@ -254,7 +254,7 @@
     "callouts": {
       "developers": {
         "stat": "5 min",
-        "label": "Average integration time",
+        "label": "To set up a public feedback board",
         "tags": {
           "0": "REST API + MCP",
           "1": "Open source - AGPL-3.0",
@@ -262,8 +262,8 @@
         }
       },
       "users": {
-        "stat": "3x",
-        "label": "More features shipped with user input",
+        "stat": "1",
+        "label": "Place for feedback, roadmap and updates",
         "tags": {
           "0": "Public voting boards",
           "1": "Live roadmap updates",

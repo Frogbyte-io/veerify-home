@@ -29,7 +29,7 @@
     "startFree": "Start gratis",
     "seeHowItWorks": "Se hvordan det fungerer",
     "trustSignals": {
-      "0": "Gratis for alltid i beta",
+      "0": "Gratis i hele betaperioden",
       "1": "Åpen kildekode",
       "2": "Klar på 5 minutter"
     }
@@ -222,7 +222,7 @@
       },
       "3": {
         "title": "Ingen lock-in",
-        "description": "Eksporter data når du vil. Du eier alt."
+        "description": "Eksporter feedback til CSV når du vil, eller hent alt ut via API-et. Dataene er dine."
       },
       "4": {
         "title": "Klar på 5 minutter",
@@ -254,7 +254,7 @@
     "callouts": {
       "developers": {
         "stat": "5 min",
-        "label": "Tid til integrasjon",
+        "label": "For å sette opp et offentlig feedback board",
         "tags": {
           "0": "REST-API + MCP",
           "1": "Åpen kildekode - AGPL-3.0",
@@ -262,8 +262,8 @@
         }
       },
       "users": {
-        "stat": "3x",
-        "label": "Bedre prioritering med brukerinput",
+        "stat": "1",
+        "label": "Sted for feedback, roadmap og oppdateringer",
         "tags": {
           "0": "Åpne boards",
           "1": "Live roadmap",

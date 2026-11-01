@@ -39,7 +39,7 @@ If neither of those bothers you, Canny is a safe choice. It is mature, has lots 
 
 ## Featurebase
 
-Featurebase is the closest thing to Canny with a help desk built in. You get boards, a roadmap, a changelog, surveys, live chat, a ticket inbox and a help center. Pricing is per seat: $29, $59 or $99 a month billed yearly, or $37, $75 or $129 billed monthly, depending on the plan. For a team of two or three, that is cheaper than Canny. For a team of fifteen, it might not be.
+Featurebase is the closest thing to Canny with a help desk built in. You get boards, a roadmap, a changelog, surveys, live chat, a ticket inbox and a help center. Pricing is per seat: $29, $59 or $99 a month billed yearly, or $37, $75 or $129 billed monthly, depending on the plan. Two seats on Growth come to $58 a month billed yearly, below Canny's $79 starting price. A third seat takes you past it. The difference is what you pay for: Featurebase charges for your team, Canny for your users. A small team with a lot of active users may still pay less on Featurebase, and a large team with few users less on Canny.
 
 Pick it if you want live chat and a knowledge base in the same product as your roadmap. We wrote a [longer Featurebase comparison](/blog/featurebase-vs-veerify) if that is where you are leaning.
 

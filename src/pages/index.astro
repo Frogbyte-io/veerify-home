@@ -8,14 +8,20 @@ import HowItWorksSection from '../components/HowItWorksSection.astro'
 import PricingSection from '../components/PricingSection.astro'
 import BenefitsSection from '../components/BenefitsSection.astro'
 import CompareSection from '../components/CompareSection.astro'
+import FaqSection from '../components/FaqSection.astro'
 import CtaSection from '../components/CtaSection.astro'
 import TheFooter from '../components/TheFooter.astro'
 import { defaultLocale, getDictionary } from '../i18n/site'
-import { buildOrganizationSchema, buildSoftwareApplicationSchema, buildWebSiteSchema } from '../lib/seo'
+import { buildFaqSchema, buildOrganizationSchema, buildSoftwareApplicationSchema, buildWebSiteSchema } from '../lib/seo'
 
 const locale = defaultLocale
 const dict = getDictionary(locale)
-const homepageJsonLd = [buildOrganizationSchema(), buildSoftwareApplicationSchema(), buildWebSiteSchema()]
+const homepageJsonLd = [
+  buildOrganizationSchema(),
+  buildSoftwareApplicationSchema(),
+  buildWebSiteSchema(),
+  buildFaqSchema(dict.faq.items),
+]
 ---
 
 <Layout locale={locale} jsonLd={homepageJsonLd}>
@@ -27,6 +33,7 @@ const homepageJsonLd = [buildOrganizationSchema(), buildSoftwareApplicationSchem
   <PricingSection t={dict.pricing} />
   <BenefitsSection t={dict.benefits} />
   <CompareSection />
+  <FaqSection t={dict.faq} />
   <CtaSection t={dict.cta} />
   <TheFooter locale={locale} t={dict.footer} />
 </Layout>

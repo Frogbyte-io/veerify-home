@@ -272,6 +272,40 @@
       }
     }
   },
+  "faq": {
+    "sectionLabel": "FAQ",
+    "heading": "Spørsmål vi ofte får",
+    "items": {
+      "0": {
+        "question": "Hva er Veerify?",
+        "answer": "Veerify er et verktøy med åpen kildekode for produktteam. Det samler offentlige tilbakemeldingstavler med stemmer, et offentlig veikart, en endringslogg og en delt innboks for kunde-e-post, slik at ønsker og kundestøtte er på ett sted."
+      },
+      "1": {
+        "question": "Er Veerify gratis?",
+        "answer": "Ja, så lenge Veerify er i åpen beta. Det gjelder ubegrenset antall prosjekter og teammedlemmer. Betalte planer kommer etter betaen, og vi sier fra om priser i god tid før noe endres."
+      },
+      "2": {
+        "question": "Er Veerify åpen kildekode? Kan jeg drifte det selv?",
+        "answer": "Ja. Koden ligger på GitHub under AGPL-3.0. Du kan kjøre det selv med Docker, PostgreSQL og S3-kompatibel lagring, eller bruke den hostede versjonen på app.veerify.io."
+      },
+      "3": {
+        "question": "Kan jeg bruke e-postadresser på mitt eget domene?",
+        "answer": "Ja. Koble til et hvilket som helst domene, legg inn DNS-oppføringene Veerify viser, og lag adresser som support@ eller hei@, pluss en catch-all. Hver adresse kan levere til innboksen, videresende til noen, eller begge deler. Bruk et underdomene hvis du vil beholde nåværende e-postleverandør."
+      },
+      "4": {
+        "question": "Kan Veerify erstatte Canny?",
+        "answer": "For de fleste team, ja. Veerify har tilbakemeldingstavler, stemmer, offentlig veikart og endringslogg. Du kan importere innlegg, kommentarer, stemmer og endringslogg fra Canny via MCP-serveren, med forhåndsvisning før noe lagres. Canny har flere tredjepartsintegrasjoner."
+      },
+      "5": {
+        "question": "Erstatter Veerify et kundestøttesystem?",
+        "answer": "For små team som tar kundestøtte på e-post, ofte ja. Innboksen har tildeling, utsettelse, ferdige svar, SLA-er, autosvar og tilfredshetsundersøkelser. Det finnes ikke live chat eller kunnskapsbase ennå."
+      },
+      "6": {
+        "question": "Kan AI-agenter bruke Veerify?",
+        "answer": "Ja. Veerify har en MCP-server. Koble til Claude Code eller en annen MCP-klient med en personlig API-nøkkel, så kan agenten gjøre det samme som du kan i dashbordet, med dine tilganger og ikke mer."
+      }
+    }
+  },
   "cta": {
     "sectionLabel": "Kom i gang",
     "headingTop": "Begynn å lytte til",

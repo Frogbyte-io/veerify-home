@@ -2,7 +2,8 @@ import { defaultLocale, locales, withLocale, type Locale } from '../i18n/site'
 
 export const siteName = 'Veerify'
 export const siteOrigin = 'https://veerify.io'
-export const defaultSocialImagePath = '/og/veerify-preview.svg'
+export const defaultSocialImagePath = '/og/veerify-preview.png'
+export const githubUrl = 'https://github.com/Frogbyte-io/veerify'
 
 const ogLocales: Record<Locale, string> = {
   en: 'en_US',
@@ -90,6 +91,9 @@ export function buildOrganizationSchema(): JsonLd {
     name: siteName,
     url: siteOrigin,
     logo: getAbsoluteUrl('/veerify.svg'),
+    description: 'Open-source feedback management and shared inbox for product teams: collect ideas, prioritize requests, publish roadmaps and changelogs, and answer customer email on your own domain.',
+    email: 'hello@veerify.io',
+    sameAs: [githubUrl],
   }
 }
 
@@ -103,10 +107,26 @@ export function buildSoftwareApplicationSchema(): JsonLd {
     url: siteOrigin,
     image: getAbsoluteUrl(defaultSocialImagePath),
     description: 'Open-source feedback management and shared inbox for product teams: collect ideas, prioritize requests, publish roadmaps and changelogs, and answer customer email on your own domain.',
+    isAccessibleForFree: true,
+    license: 'https://www.gnu.org/licenses/agpl-3.0.html',
+    sameAs: [githubUrl],
+    featureList: [
+      'Public feedback boards with voting',
+      'Public kanban roadmap',
+      'Changelog with RSS',
+      'Shared inbox with SLAs, canned responses and CSAT surveys',
+      'Email addresses on your own domain with forwarding and catch-all',
+      'Marketing hub: site audit, AI visibility, mentions, reviews',
+      'GitHub issue sync',
+      'REST API and MCP server for AI agents',
+      'Import from Canny',
+      'Self-hosting',
+    ],
     offers: {
       '@type': 'Offer',
       price: '0',
       priceCurrency: 'USD',
+      description: 'Free during open beta',
     },
   }
 }

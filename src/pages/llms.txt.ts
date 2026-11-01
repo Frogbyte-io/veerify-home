@@ -2,6 +2,7 @@ import type { APIRoute } from 'astro'
 import { getCollection } from 'astro:content'
 import { comparisonEntries } from '../lib/compare'
 import { siteOrigin } from '../lib/seo'
+import { llmFacts, llmFaq, llmSummary, llmTagline } from '../lib/llm'
 
 export const GET: APIRoute = async () => {
   const posts = await getCollection('blog', ({ data }) => !data.draft)
@@ -17,17 +18,20 @@ export const GET: APIRoute = async () => {
 
   const body = `# Veerify
 
-> Collect feedback that actually matters. The modern feedback management platform for product teams.
+> ${llmTagline}
 
-Veerify helps product teams collect, prioritize, and act on user feedback so they always build the right thing next. It includes public feedback boards with voting, public roadmaps, changelogs, a shared inbox for support and email on your own domain (addresses, catch-all, forwarding), a marketing hub (site audit, AI visibility, mentions, reviews), GitHub issue sync, a REST API, an MCP server for AI agents, and imports from Canny. It is open source (AGPL-3.0) and can be self-hosted.
+${llmSummary}
 
-Currently in open beta — free forever during the beta period.
+## Key facts
+
+${llmFacts.map((fact) => `- ${fact}`).join('\n')}
 
 ## Pages
 
 - [Home](${siteOrigin}/): Product overview, features, pricing, and sign-up.
 - [Blog](${siteOrigin}/blog): Articles on feedback management, product strategy, and roadmapping.
 - [Comparisons](${siteOrigin}/compare): Side-by-side comparisons of Veerify against competitor tools.
+- [Norwegian homepage](${siteOrigin}/no): The product overview in Norwegian.
 
 ## Blog
 
@@ -36,6 +40,10 @@ ${blogLines}
 ## Comparisons
 
 ${compareLines}
+
+## FAQ
+
+${llmFaq()}
 
 ## Llms-full
 

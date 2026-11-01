@@ -3,7 +3,7 @@ import Layout from './Layout.astro'
 import TheNavbar from '../components/TheNavbar.astro'
 import TheFooter from '../components/TheFooter.astro'
 import { getDateLocale, getDictionary, withLocale, type Locale, type SiteDictionary } from '../i18n/site'
-import { buildArticleSchema, buildBreadcrumbSchema, getCanonicalPath } from '../lib/seo'
+import { buildArticleSchema, buildBreadcrumbSchema, buildFaqSchema } from '../lib/seo'
 
 interface Props {
   locale: Locale
@@ -14,9 +14,11 @@ interface Props {
   author: string
   tags: string[]
   updatedDate?: Date
+  slug: string
+  faq?: Array<{ question: string; answer: string }>
 }
 
-const { locale, t, title, description, pubDate, author, tags, updatedDate } = Astro.props
+const { locale, t, title, description, pubDate, author, tags, updatedDate, slug, faq = [] } = Astro.props
 
 const formattedPubDate = new Intl.DateTimeFormat(getDateLocale(locale), {
   year: 'numeric',
@@ -34,7 +36,8 @@ const formattedUpdatedDate = updatedDate
 
 const dict = getDictionary(locale)
 const blogHref = withLocale(locale, '/blog')
-const articlePath = getCanonicalPath(Astro.url.pathname, locale, true)
+// Posts are only written in English, so every locale copy points search engines at the English URL
+const articlePath = `/blog/${slug}`
 const articleSchema = buildArticleSchema({
   headline: title,
   description,
@@ -50,6 +53,7 @@ const breadcrumbSchema = buildBreadcrumbSchema([
   { name: 'Blog', path: blogHref },
   { name: title, path: articlePath },
 ])
+const jsonLd = faq.length > 0 ? [breadcrumbSchema, articleSchema, buildFaqSchema(faq)] : [breadcrumbSchema, articleSchema]
 ---
 
 <Layout
@@ -64,7 +68,9 @@ const breadcrumbSchema = buildBreadcrumbSchema([
     author,
     tags,
   }}
-  jsonLd={[breadcrumbSchema, articleSchema]}
+  localized={false}
+  canonical={articlePath}
+  jsonLd={jsonLd}
 >
   <TheNavbar locale={locale} t={dict.navbar} />
 
@@ -118,9 +124,24 @@ const breadcrumbSchema = buildBreadcrumbSchema([
       prose-blockquote:border-l-primary prose-blockquote:text-muted-foreground
       prose-ul:text-muted-foreground prose-ol:text-muted-foreground
       prose-li:marker:text-primary
+      prose-table:block prose-table:overflow-x-auto prose-table:text-sm prose-th:whitespace-nowrap
     ">
       <slot />
     </article>
+
+    {faq.length > 0 && (
+      <section class="mt-16 border-t border-border/60 pt-12">
+        <h2 class="font-display mb-6 text-2xl font-bold tracking-tight">FAQ</h2>
+        <div class="space-y-6">
+          {faq.map(item => (
+            <div>
+              <h3 class="mb-2 font-semibold">{item.question}</h3>
+              <p class="leading-relaxed text-muted-foreground">{item.answer}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+    )}
 
     <div class="mt-16 rounded-2xl border border-border/60 bg-card p-8 text-center">
       <p class="mb-2 text-xs font-semibold uppercase tracking-[0.15em] text-primary">{t.tryVeerify}</p>

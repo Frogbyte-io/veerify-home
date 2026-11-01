@@ -3,6 +3,7 @@ import { getCollection } from 'astro:content'
 import { comparisonEntries } from '../lib/compare'
 import { siteOrigin } from '../lib/seo'
 import { getDictionary } from '../i18n/site'
+import { llmFacts, llmFaq, llmSummary, llmTagline } from '../lib/llm'
 
 export const GET: APIRoute = async () => {
   const posts = await getCollection('blog', ({ data }) => !data.draft)
@@ -15,7 +16,9 @@ export const GET: APIRoute = async () => {
 URL: ${siteOrigin}/blog/${post.slug}
 Published: ${post.data.pubDate.toISOString().slice(0, 10)}
 
-${post.data.description}`,
+${post.data.description}
+
+${post.body}`,
     )
     .join('\n\n---\n\n')
 
@@ -44,13 +47,15 @@ ${entry.faq.map((f) => `**${f.question}**\n${f.answer}`).join('\n\n')}`,
 
   const body = `# Veerify — Full Content
 
-> Collect feedback that actually matters. The modern feedback management platform for product teams.
+> ${llmTagline}
 
 URL: ${siteOrigin}
 
-Veerify helps product teams collect, prioritize, and act on user feedback so they always build the right thing next. It includes public feedback boards with voting, public roadmaps, changelogs, a shared inbox for support and email on your own domain (addresses, catch-all, forwarding), a marketing hub (site audit, AI visibility, mentions, reviews), GitHub issue sync, a REST API, an MCP server for AI agents, and imports from Canny. It is open source (AGPL-3.0) and can be self-hosted.
+${llmSummary}
 
-Currently in open beta — free forever during the beta period.
+## Key facts
+
+${llmFacts.map((fact) => `- ${fact}`).join('\n')}
 
 ---
 
@@ -61,6 +66,12 @@ ${features}
 ## Inbox and email
 
 ${inbox}
+
+---
+
+# FAQ
+
+${llmFaq()}
 
 ---
 

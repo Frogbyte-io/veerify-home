@@ -272,6 +272,40 @@
       }
     }
   },
+  "faq": {
+    "sectionLabel": "FAQ",
+    "heading": "Questions people ask us",
+    "items": {
+      "0": {
+        "question": "What is Veerify?",
+        "answer": "Veerify is an open-source tool for product teams. It combines public feedback boards with voting, a public roadmap, a changelog and a shared inbox for customer email, so feature requests and support conversations live in one place."
+      },
+      "1": {
+        "question": "Is Veerify free?",
+        "answer": "Yes, while Veerify is in open beta. That includes unlimited projects and team members. Paid plans will come after the beta, and we will announce prices well before anything changes."
+      },
+      "2": {
+        "question": "Is Veerify open source? Can I self-host it?",
+        "answer": "Yes. The code is on GitHub under AGPL-3.0. You can run it yourself with Docker, PostgreSQL and S3-compatible storage, or use the hosted version at app.veerify.io."
+      },
+      "3": {
+        "question": "Can I use email addresses on my own domain?",
+        "answer": "Yes. Connect any domain, add the DNS records Veerify shows you, and create addresses like support@ or hello@, plus a catch-all. Each address can deliver to the inbox, forward to someone, or both. Use a subdomain if you want to keep your current mail provider."
+      },
+      "4": {
+        "question": "Can Veerify replace Canny?",
+        "answer": "For most teams, yes. Veerify has feedback boards, voting, a public roadmap and a changelog. You can import posts, comments, votes and changelog entries from Canny through the MCP server, with a preview before anything is written. Canny has more third-party integrations."
+      },
+      "5": {
+        "question": "Does Veerify replace a help desk?",
+        "answer": "For small teams that handle support over email, often it does. The inbox has assignment, snooze, canned responses, SLAs, auto-replies and satisfaction surveys. There is no live chat or knowledge base yet."
+      },
+      "6": {
+        "question": "Can AI agents work with Veerify?",
+        "answer": "Yes. Veerify has an MCP server. Connect Claude Code or another MCP client with a personal API key, and the agent can do what you can do in the dashboard, with your permissions and nothing more."
+      }
+    }
+  },
   "cta": {
     "sectionLabel": "Get started today",
     "headingTop": "Start listening to",

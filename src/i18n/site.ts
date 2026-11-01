@@ -81,6 +81,10 @@ function buildDictionary(raw: RawDict) {
         },
       },
     },
+    faq: {
+      ...raw.faq,
+      items: vals(raw.faq.items),
+    },
     cta: raw.cta,
     productMockup: {
       ...raw.productMockup,

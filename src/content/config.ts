@@ -10,6 +10,9 @@ const blog = defineCollection({
     author: z.string().default('Veerify Team'),
     tags: z.array(z.string()).default([]),
     draft: z.boolean().default(false),
+    /** Competitor names as used in `comparisonEntries`, so compare pages can link to the post */
+    competitors: z.array(z.string()).default([]),
+    faq: z.array(z.object({ question: z.string(), answer: z.string() })).default([]),
   }),
 })
 

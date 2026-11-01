@@ -25,6 +25,8 @@ interface Props {
   imageAlt?: string
   type?: 'website' | 'article'
   localized?: boolean
+  /** Overrides the computed canonical path, e.g. for a page only written in one language */
+  canonical?: string
   noindex?: boolean
   article?: {
     publishedTime?: Date
@@ -45,12 +47,13 @@ const {
   imageAlt = title,
   type = 'website',
   localized = true,
+  canonical,
   noindex = false,
   article,
   jsonLd,
 } = Astro.props
 
-const canonicalPath = getCanonicalPath(pathname, locale, localized)
+const canonicalPath = canonical ?? getCanonicalPath(pathname, locale, localized)
 const canonicalUrl = getAbsoluteUrl(canonicalPath)
 const imageUrl = getAbsoluteUrl(image)
 const localeAlternates = localized ? getAlternateLocaleLinks(pathname, locale) : []
@@ -107,6 +110,8 @@ const robotsContent = noindex ? 'noindex, nofollow' : 'index, follow, max-image-
     <title>{title}</title>
     <link rel="icon" type="image/svg+xml" href="/veerify.svg" />
     <link rel="ai-plugin" href="/.well-known/ai-plugin.json" />
+    <link rel="alternate" type="application/rss+xml" title="Veerify Blog" href={getAbsoluteUrl('/rss.xml')} />
+    <link rel="alternate" type="text/plain" title="LLM summary" href={getAbsoluteUrl('/llms.txt')} />
     <link rel="preload" href={figtreeFontUrl} as="font" type="font/woff2" crossorigin />
     <link rel="preload" href={frauncesFontUrl} as="font" type="font/woff2" crossorigin />
     {serializedJsonLd.map((entry) => (

@@ -5,6 +5,7 @@ import TheFooter from '../../components/TheFooter.astro'
 import { comparisonEntries, getComparisonEntry } from '../../lib/compare'
 import { buildBreadcrumbSchema, buildFaqSchema } from '../../lib/seo'
 import { defaultLocale, getDictionary } from '../../i18n/site'
+import { getCollection } from 'astro:content'
 
 export function getStaticPaths() {
   return comparisonEntries.map((entry) => ({
@@ -21,6 +22,10 @@ if (!entry) {
 
 const locale = defaultLocale
 const dict = getDictionary(locale)
+const relatedPosts = await getCollection(
+  'blog',
+  ({ data }) => !data.draft && data.competitors.includes(entry.competitor),
+)
 const relatedEntries = comparisonEntries.filter((candidate) => candidate.slug !== entry.slug).slice(0, 3)
 const jsonLd = [
   buildBreadcrumbSchema([
@@ -89,6 +94,26 @@ const jsonLd = [
         ))}
       </div>
     </section>
+
+    {relatedPosts.length > 0 && (
+      <section class="mt-16">
+        <p class="mb-3 text-xs font-semibold uppercase tracking-[0.15em] text-primary">Read more</p>
+        <h2 class="font-display text-3xl font-bold tracking-tight">
+          {relatedPosts.length > 1 ? 'Longer comparisons' : 'The longer comparison'}
+        </h2>
+        <div class="mt-8 grid grid-cols-1 gap-5 md:grid-cols-2">
+          {relatedPosts.map((post) => (
+            <a
+              href={`/blog/${post.slug}`}
+              class="group rounded-2xl border border-border/60 bg-card p-6 transition-all hover:-translate-y-0.5 hover:border-primary/30"
+            >
+              <h3 class="text-lg font-semibold tracking-tight transition-colors group-hover:text-primary">{post.data.title}</h3>
+              <p class="mt-2 text-sm leading-relaxed text-muted-foreground">{post.data.description}</p>
+            </a>
+          ))}
+        </div>
+      </section>
+    )}
 
     <section class="mt-16 rounded-3xl border border-border/60 bg-card p-8 lg:p-10">
       <p class="mb-3 text-xs font-semibold uppercase tracking-[0.15em] text-primary">FAQ</p>

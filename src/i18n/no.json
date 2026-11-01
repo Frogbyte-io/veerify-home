@@ -1,14 +1,14 @@
 {
   "layout": {
-    "title": "Veerify – Tilbakemeldinger som driver produktet fremover",
-    "description": "Veerify hjelper deg å samle inn og prioritere tilbakemeldinger som faktisk betyr noe. En moderne plattform for produktteam.",
-    "ogDescription": "Samle inn, forstå og handle på brukerinnsikt. Vit alltid hva som bør bygges videre."
+    "title": "Veerify - Feedback, roadmap og innboks på ett sted",
+    "description": "Veerify er arbeidsområdet med åpen kildekode for produktteam: feedback boards, stemmer, offentlige roadmaps, changelogs og en delt innboks for e-post på ditt eget domene.",
+    "ogDescription": "Samle feedback, publiser roadmap og changelog, og svar kundene fra en delt innboks på ditt eget domene."
   },
   "navbar": {
     "features": "Funksjoner",
     "howItWorks": "Slik fungerer det",
     "pricing": "Priser",
-    "feedback": "Tilbakemeldinger",
+    "feedback": "Feedback",
     "signIn": "Logg inn",
     "getStartedFree": "Start gratis",
     "darkModeToggle": "Bytt mørk modus",
@@ -17,51 +17,142 @@
     "languageNames": {
       "en": "Engelsk",
       "no": "Norsk"
-    }
+    },
+    "inbox": "Innboks"
   },
   "hero": {
-    "betaPill": "Åpen beta – gratis",
-    "headlineTop": "Tilbakemeldinger",
+    "betaPill": "Nytt: delt innboks og e-post på ditt domene",
+    "headlineTop": "Feedback",
     "headlineAccent": "som faktisk",
     "headlineBottom": "blir til produkt.",
-    "subtext": "Veerify gir produktteam oversikt over hva brukerne ønsker – og hva som faktisk bør prioriteres videre.",
+    "subtext": "Veerify samler feedback, roadmap, changelog og en delt innboks for e-posten din i ett arbeidsområde med åpen kildekode - så du alltid vet hva du skal bygge, og hvem som venter på det.",
     "startFree": "Start gratis",
     "seeHowItWorks": "Se hvordan det fungerer",
     "trustSignals": {
-      "0": "Gratis i beta",
-      "1": "Ubegrensede prosjekter",
-      "2": "Kom i gang på minutter"
+      "0": "Gratis i hele betaperioden",
+      "1": "Åpen kildekode",
+      "2": "Klar på 5 minutter"
     }
   },
   "features": {
     "sectionLabel": "Funksjoner",
-    "headingTop": "Alt du trenger.",
-    "headingBottom": "Ingenting overflødig.",
-    "intro": "Et fokusert verktøy for å hente ut signal fra støy – og bygge det brukerne faktisk etterspør.",
+    "headingTop": "Ett arbeidsområde.",
+    "headingBottom": "Alle samtaler med brukerne dine.",
+    "intro": "Slå på verktøyene hvert prosjekt trenger. Feedback, roadmap, changelog, innboks og markedsføring deler de samme brukerne, produktene og dataene.",
     "items": {
       "0": {
-        "title": "Samle inn feedback",
-        "desc": "Legg inn en widget i produktet eller del en lenke. Fang opp ideer, feil og ønsker der brukerne faktisk er."
+        "title": "Feedback boards",
+        "desc": "En offentlig tavle per produkt med et veiledet skjema, vedlegg og delbare lenker. Bygg den inn i appen eller del lenken."
       },
       "1": {
-        "title": "Prioriter det riktige",
-        "desc": "La brukerne stemme. Få tydelig signal på hva som gir mest verdi – og hva som kan vente."
+        "title": "Stemmer og prioritering",
+        "desc": "La brukerne stemme på det som betyr mest. Sorter etter etterspørsel, bytt mellom tabell- og kanbanvisning, og eksporter til CSV."
       },
       "2": {
-        "title": "Del roadmap",
-        "desc": "Vis hva dere jobber med og hva som kommer. Skap forutsigbarhet og tillit hos brukerne."
+        "title": "Offentlig roadmap",
+        "desc": "En roadmap i kanbanstil, filtrert per produkt, som viser hva som er planlagt, pågår og er levert."
       },
       "3": {
-        "title": "Struktur for teamet",
-        "desc": "Samle alt på ett sted. Fordel ansvar, følg status og hold oversikt på tvers av teamet."
+        "title": "Changelog",
+        "desc": "Publiser versjonsnotater på en offentlig side med RSS-feed, og gi beskjed til dem som ba om det når det er levert."
       },
       "4": {
-        "title": "Innsikt over tid",
-        "desc": "Se mønstre i feedbacken. Ta beslutninger basert på hva som faktisk går igjen hos brukerne."
+        "title": "Delt innboks",
+        "desc": "Kundestøtte og e-post i én innboks: tildel, utsett, arkiver, ferdige svar, SLA-er, kontakter og tilfredshetsundersøkelser."
       },
       "5": {
-        "title": "Automatiske oppdateringer",
-        "desc": "Gi beskjed når noe er levert. Hold brukerne i loopen uten ekstra manuelt arbeid."
+        "title": "E-post på ditt domene",
+        "desc": "Koble til et hvilket som helst domene og lag adresser som hei@ eller support@, pluss en catch-all. Videresend til hvem som helst, og svar fra adressen kunden skrev til."
+      },
+      "6": {
+        "title": "Markedsføringshub",
+        "desc": "Analyser nettstedet, følg med på hvordan AI-assistenter anbefaler deg, overvåk omtaler og konkurrenter, og samle anmeldelser og attester."
+      },
+      "7": {
+        "title": "GitHub-integrasjon",
+        "desc": "Gjør feedback om til GitHub-issues automatisk, og marker dem som fullført når issuen lukkes."
+      },
+      "8": {
+        "title": "API, MCP og import",
+        "desc": "Koble til Claude eller en annen MCP-klient med en personlig API-nøkkel, bruk REST-API-et, og flytt dataene dine fra Canny."
+      }
+    }
+  },
+  "inbox": {
+    "sectionLabel": "Innboks og e-post",
+    "headingTop": "Din delte innboks,",
+    "headingAccent": "på ditt eget domene.",
+    "intro": "Kundestøtte, salgsspørsmål og vanlig e-post havner i én innboks ved siden av feedbacken. Koble til et domene, lag adresser, og svar fra adressen kunden skrev til.",
+    "points": {
+      "0": {
+        "title": "Én innboks for alt",
+        "desc": "Tildel, utsett, arkiver eller merk som spam. Mapper, adressefiltre og et detaljpanel gir ro på travle dager."
+      },
+      "1": {
+        "title": "Adresser på hvilket som helst domene",
+        "desc": "Legg til hei@, support@ eller en catch-all. Bruk et underdomene for å beholde Google Workspace eller nåværende e-postleverandør."
+      },
+      "2": {
+        "title": "Mail eller helpdesk, per adresse",
+        "desc": "Helpdesk-adresser får autosvar, SLA-er, automatiseringsregler og tilfredshetsundersøkelser. Mail-adresser holder seg stille."
+      },
+      "3": {
+        "title": "Videresend og svar som deg selv",
+        "desc": "Videresend til en hvilken som helst bekreftet adresse. Svar sendes fra adressen kunden skrev til. Spam og virus videresendes aldri."
+      },
+      "4": {
+        "title": "Koblet til feedback",
+        "desc": "Gjør en samtale om til feedback med ett klikk, med kontaktens historikk rett ved siden av tråden."
+      }
+    },
+    "cta": "Sett opp innboksen",
+    "mock": {
+      "title": "Innboks",
+      "addressesLabel": "Adresser",
+      "conversationsLabel": "Åpne samtaler",
+      "behaviorMail": "Mail",
+      "behaviorHelpdesk": "Helpdesk",
+      "catchAll": "Catch-all",
+      "forwardsTo": "Videresendes til",
+      "addresses": {
+        "0": {
+          "address": "hei@acme.no",
+          "behavior": "mail",
+          "forward": "daglig@acme.no"
+        },
+        "1": {
+          "address": "support@acme.no",
+          "behavior": "helpdesk",
+          "forward": ""
+        },
+        "2": {
+          "address": "*@acme.no",
+          "behavior": "catchAll",
+          "forward": ""
+        }
+      },
+      "conversations": {
+        "0": {
+          "from": "Maja Olsen",
+          "subject": "CSV-eksport feiler i Safari",
+          "to": "support@",
+          "badge": "SLA 1t 42m",
+          "time": "2m"
+        },
+        "1": {
+          "from": "Lars Hagen",
+          "subject": "Samarbeid med Acme?",
+          "to": "hei@",
+          "badge": "",
+          "time": "18m"
+        },
+        "2": {
+          "from": "Ingrid Berg",
+          "subject": "Kan dere lage en Slack-integrasjon?",
+          "to": "support@",
+          "badge": "Feedback",
+          "time": "1t"
+        }
       }
     }
   },
@@ -73,7 +164,7 @@
       "0": {
         "number": "01",
         "title": "Samle",
-        "desc": "Start raskt med widget eller lenke. Få strukturert feedback fra første dag."
+        "desc": "Del en offentlig tavle, bygg den inn i appen, eller send e-posten din til innboksen. Feedback og samtaler havner på ett sted fra dag én."
       },
       "1": {
         "number": "02",
@@ -83,7 +174,7 @@
       "2": {
         "number": "03",
         "title": "Lever",
-        "desc": "Ship, oppdater roadmap og varsle brukerne. Loopen er lukket."
+        "desc": "Lever, publiser i changelogen og roadmapen, og gi beskjed til alle som spurte. Feedback-loopen lukkes. Tilliten vokser."
       }
     }
   },
@@ -99,13 +190,13 @@
     "priceHint": "Gratis i beta. Rettferdig prising senere.",
     "cta": "Start gratis",
     "features": {
-      "0": "Ubegrensede prosjekter",
-      "1": "Ubegrenset team",
-      "2": "Offentlige roadmaps",
-      "3": "Stemmegivning og prioritering",
-      "4": "Varslinger til brukere",
-      "5": "API-tilgang",
-      "6": "Prioritert support i beta"
+      "0": "Ubegrenset antall prosjekter og produkter",
+      "1": "Ubegrenset antall teammedlemmer",
+      "2": "Feedback boards og stemmer",
+      "3": "Offentlig roadmap og changelog",
+      "4": "Delt innboks med SLA-er og CSAT",
+      "5": "REST-API og MCP-server",
+      "6": "Prioritert støtte i beta"
     }
   },
   "benefits": {
@@ -118,24 +209,24 @@
     "tabUsers": "For brukere",
     "developerBenefits": {
       "0": {
-        "title": "Full API-tilgang",
-        "description": "Koble feedback direkte inn i dine eksisterende systemer og workflows."
+        "title": "REST-API med OpenAPI-spesifikasjon",
+        "description": "Alt du kan gjøre i dashboardet, kan du gjøre via API-et. Personlige API-nøkler med nøyaktig dine tilganger."
       },
       "1": {
         "title": "Åpen og fleksibel",
         "description": "Se, tilpass og host selv. Full kontroll over egen stack."
       },
       "2": {
-        "title": "Webhooks og events",
-        "description": "Reager i sanntid på nye tilbakemeldinger og endringer."
+        "title": "MCP-server for AI-agenter",
+        "description": "Koble til Claude Code eller en annen MCP-klient. Agenter kan sortere feedback, administrere e-postinnstillinger og importere data for deg."
       },
       "3": {
         "title": "Ingen lock-in",
-        "description": "Eksporter data når du vil. Du eier alt."
+        "description": "Eksporter feedback til CSV når du vil, eller hent alt ut via API-et. Dataene er dine."
       },
       "4": {
-        "title": "Rask oppstart",
-        "description": "Kom i gang på minutter med enkel integrasjon."
+        "title": "Klar på 5 minutter",
+        "description": "Del en lenke til den offentlige tavlen eller bygg den inn på nettstedet. Importer feedback, stemmer og kommentarer fra Canny."
       }
     },
     "userBenefits": {
@@ -152,32 +243,66 @@
         "description": "Se hva som planlegges, bygges og er levert."
       },
       "3": {
-        "title": "Hold deg oppdatert",
-        "description": "Få beskjed når ting skjer."
+        "title": "Hold deg oppdatert automatisk",
+        "description": "Få beskjed når en funksjon du stemte på går til «Pågår» eller dukker opp i changelogen."
       },
       "4": {
-        "title": "Enkelt å bruke",
-        "description": "Send inn feedback på sekunder – uten friksjon."
+        "title": "Hjelp som svarer",
+        "description": "Send en e-post til kundestøtte og få svar fra et ekte menneske, med hele samtalen i én tråd."
       }
     },
     "callouts": {
       "developers": {
         "stat": "5 min",
-        "label": "Tid til integrasjon",
+        "label": "For å sette opp et offentlig feedback board",
         "tags": {
-          "0": "API + webhooks",
-          "1": "Åpen kildekode",
-          "2": "Self-host eller cloud"
+          "0": "REST-API + MCP",
+          "1": "Åpen kildekode - AGPL-3.0",
+          "2": "Self-hosted eller cloud"
         }
       },
       "users": {
-        "stat": "3x",
-        "label": "Bedre prioritering med brukerinput",
+        "stat": "1",
+        "label": "Sted for feedback, roadmap og oppdateringer",
         "tags": {
           "0": "Åpne boards",
           "1": "Live roadmap",
           "2": "Varsler"
         }
+      }
+    }
+  },
+  "faq": {
+    "sectionLabel": "FAQ",
+    "heading": "Spørsmål vi ofte får",
+    "items": {
+      "0": {
+        "question": "Hva er Veerify?",
+        "answer": "Veerify er et verktøy med åpen kildekode for produktteam. Det samler offentlige feedback boards med stemmer, en offentlig roadmap, en changelog og en delt innboks for kunde-e-post, slik at ønsker og kundestøtte er på ett sted."
+      },
+      "1": {
+        "question": "Er Veerify gratis?",
+        "answer": "Ja, så lenge Veerify er i åpen beta. Det gjelder ubegrenset antall prosjekter og teammedlemmer. Betalte planer kommer etter betaen, og vi sier fra om priser i god tid før noe endres."
+      },
+      "2": {
+        "question": "Er Veerify åpen kildekode? Kan jeg drifte det selv?",
+        "answer": "Ja. Koden ligger på GitHub under AGPL-3.0. Du kan kjøre det selv med Docker, PostgreSQL og S3-kompatibel lagring, eller bruke den hostede versjonen på app.veerify.io."
+      },
+      "3": {
+        "question": "Kan jeg bruke e-postadresser på mitt eget domene?",
+        "answer": "Ja. Koble til et hvilket som helst domene, legg inn DNS-oppføringene Veerify viser, og lag adresser som support@ eller hei@, pluss en catch-all. Hver adresse kan levere til innboksen, videresende til noen, eller begge deler. Bruk et underdomene hvis du vil beholde nåværende e-postleverandør."
+      },
+      "4": {
+        "question": "Kan Veerify erstatte Canny?",
+        "answer": "For de fleste team, ja. Veerify har feedback boards, stemmer, offentlig roadmap og changelog. Du kan importere innlegg, kommentarer, stemmer og changelog fra Canny via MCP-serveren, med forhåndsvisning før noe lagres. Canny har flere tredjepartsintegrasjoner."
+      },
+      "5": {
+        "question": "Erstatter Veerify en helpdesk?",
+        "answer": "For små team som tar kundestøtte på e-post, ofte ja. Innboksen har tildeling, utsettelse, ferdige svar, SLA-er, autosvar og tilfredshetsundersøkelser. Det finnes ikke live chat eller kunnskapsbase ennå."
+      },
+      "6": {
+        "question": "Kan AI-agenter bruke Veerify?",
+        "answer": "Ja. Veerify har en MCP-server. Koble til Claude Code eller en annen MCP-klient med en personlig API-nøkkel, så kan agenten gjøre det samme som du kan i dashboardet, med dine tilganger og ikke mer."
       }
     }
   },
@@ -204,7 +329,7 @@
     "closeLabel": "Lukk",
     "commentsLabel": "Kommentarer",
     "defaultDetailTitle": "Detaljer",
-    "defaultDetailMetaType": "Tilbakemelding",
+    "defaultDetailMetaType": "Feedback",
     "defaultDetailMetaStatus": "Åpen",
     "defaultComments": {
       "0": { "name": "Bruker 1", "text": "Ser lovende ut." },
@@ -278,7 +403,7 @@
     "features": "Funksjoner",
     "pricing": "Priser",
     "howItWorks": "Slik fungerer det",
-    "feedback": "Tilbakemeldinger",
+    "feedback": "Feedback",
     "signIn": "Logg inn",
     "about": "Om",
     "blog": "Blogg",

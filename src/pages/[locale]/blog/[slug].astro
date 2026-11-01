@@ -35,6 +35,8 @@ const { Content } = await render(post)
   author={post.data.author}
   tags={post.data.tags}
   updatedDate={post.data.updatedDate}
+  slug={post.slug}
+  faq={post.data.faq}
 >
   <Content />
 </BlogLayout>

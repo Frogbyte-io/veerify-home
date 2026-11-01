@@ -1,7 +1,7 @@
 import type { APIRoute } from 'astro'
 import { getCollection } from 'astro:content'
 import { comparisonEntries } from '../lib/compare'
-import { locales, withLocale } from '../i18n/site'
+import { withLocale } from '../i18n/site'
 import { getAbsoluteUrl } from '../lib/seo'
 
 function escapeXml(value: string) {
@@ -26,12 +26,10 @@ export const GET: APIRoute = async () => {
       path: `/compare/${entry.slug}`,
       lastmod: undefined,
     })),
-    ...posts.flatMap((post) =>
-      locales.map((locale) => ({
-        path: withLocale(locale, `/blog/${post.slug}`),
-        lastmod: (post.data.updatedDate ?? post.data.pubDate).toISOString(),
-      })),
-    ),
+    ...posts.map((post) => ({
+      path: `/blog/${post.slug}`,
+      lastmod: (post.data.updatedDate ?? post.data.pubDate).toISOString(),
+    })),
   ]
 
   const body = `<?xml version="1.0" encoding="UTF-8"?>

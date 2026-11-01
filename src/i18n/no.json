@@ -1,8 +1,8 @@
 {
   "layout": {
-    "title": "Veerify - Tilbakemeldinger, veikart og innboks på ett sted",
-    "description": "Veerify er arbeidsområdet med åpen kildekode for produktteam: tilbakemeldingstavler, stemmer, offentlige veikart, endringslogger og en delt innboks for e-post på ditt eget domene.",
-    "ogDescription": "Samle tilbakemeldinger, publiser veikart og endringslogg, og svar kundene fra en delt innboks på ditt eget domene."
+    "title": "Veerify - Tilbakemeldinger, roadmap og innboks på ett sted",
+    "description": "Veerify er arbeidsområdet med åpen kildekode for produktteam: tilbakemeldingstavler, stemmer, offentlige roadmaps, changelogs og en delt innboks for e-post på ditt eget domene.",
+    "ogDescription": "Samle tilbakemeldinger, publiser roadmap og changelog, og svar kundene fra en delt innboks på ditt eget domene."
   },
   "navbar": {
     "features": "Funksjoner",
@@ -25,7 +25,7 @@
     "headlineTop": "Tilbakemeldinger",
     "headlineAccent": "som faktisk",
     "headlineBottom": "blir til produkt.",
-    "subtext": "Veerify samler tilbakemeldinger, veikart, endringslogg og en delt innboks for e-posten din i ett arbeidsområde med åpen kildekode - så du alltid vet hva du skal bygge, og hvem som venter på det.",
+    "subtext": "Veerify samler tilbakemeldinger, roadmap, changelog og en delt innboks for e-posten din i ett arbeidsområde med åpen kildekode - så du alltid vet hva du skal bygge, og hvem som venter på det.",
     "startFree": "Start gratis",
     "seeHowItWorks": "Se hvordan det fungerer",
     "trustSignals": {
@@ -38,7 +38,7 @@
     "sectionLabel": "Funksjoner",
     "headingTop": "Ett arbeidsområde.",
     "headingBottom": "Alle samtaler med brukerne dine.",
-    "intro": "Slå på verktøyene hvert prosjekt trenger. Tilbakemeldinger, veikart, endringslogg, innboks og markedsføring deler de samme brukerne, produktene og dataene.",
+    "intro": "Slå på verktøyene hvert prosjekt trenger. Tilbakemeldinger, roadmap, changelog, innboks og markedsføring deler de samme brukerne, produktene og dataene.",
     "items": {
       "0": {
         "title": "Tilbakemeldingstavler",
@@ -49,11 +49,11 @@
         "desc": "La brukerne stemme på det som betyr mest. Sorter etter etterspørsel, bytt mellom tabell- og kanbanvisning, og eksporter til CSV."
       },
       "2": {
-        "title": "Offentlig veikart",
-        "desc": "Et veikart i kanbanstil, filtrert per produkt, som viser hva som er planlagt, pågår og er levert."
+        "title": "Offentlig roadmap",
+        "desc": "En roadmap i kanbanstil, filtrert per produkt, som viser hva som er planlagt, pågår og er levert."
       },
       "3": {
-        "title": "Endringslogg",
+        "title": "Changelog",
         "desc": "Publiser versjonsnotater på en offentlig side med RSS-feed, og gi beskjed til dem som ba om det når det er levert."
       },
       "4": {
@@ -93,8 +93,8 @@
         "desc": "Legg til hei@, support@ eller en catch-all. Bruk et underdomene for å beholde Google Workspace eller nåværende e-postleverandør."
       },
       "2": {
-        "title": "E-post eller kundestøtte, per adresse",
-        "desc": "Kundestøtteadresser får autosvar, SLA-er, automatiseringsregler og tilfredshetsundersøkelser. E-postadresser holder seg stille."
+        "title": "Mail eller helpdesk, per adresse",
+        "desc": "Helpdesk-adresser får autosvar, SLA-er, automatiseringsregler og tilfredshetsundersøkelser. Mail-adresser holder seg stille."
       },
       "3": {
         "title": "Videresend og svar som deg selv",
@@ -110,8 +110,8 @@
       "title": "Innboks",
       "addressesLabel": "Adresser",
       "conversationsLabel": "Åpne samtaler",
-      "behaviorMail": "E-post",
-      "behaviorHelpdesk": "Kundestøtte",
+      "behaviorMail": "Mail",
+      "behaviorHelpdesk": "Helpdesk",
       "catchAll": "Catch-all",
       "forwardsTo": "Videresendes til",
       "addresses": {
@@ -174,7 +174,7 @@
       "2": {
         "number": "03",
         "title": "Lever",
-        "desc": "Lever, publiser i endringsloggen og veikartet, og gi beskjed til alle som spurte. Tilbakemeldingssløyfen lukkes. Tilliten vokser."
+        "desc": "Lever, publiser i changelogen og roadmapen, og gi beskjed til alle som spurte. Feedback-loopen lukkes. Tilliten vokser."
       }
     }
   },
@@ -193,7 +193,7 @@
       "0": "Ubegrenset antall prosjekter og produkter",
       "1": "Ubegrenset antall teammedlemmer",
       "2": "Tilbakemeldingstavler og stemmer",
-      "3": "Offentlig veikart og endringslogg",
+      "3": "Offentlig roadmap og changelog",
       "4": "Delt innboks med SLA-er og CSAT",
       "5": "REST-API og MCP-server",
       "6": "Prioritert støtte i beta"
@@ -210,7 +210,7 @@
     "developerBenefits": {
       "0": {
         "title": "REST-API med OpenAPI-spesifikasjon",
-        "description": "Alt du kan gjøre i dashbordet, kan du gjøre via API-et. Personlige API-nøkler med nøyaktig dine tilganger."
+        "description": "Alt du kan gjøre i dashboardet, kan du gjøre via API-et. Personlige API-nøkler med nøyaktig dine tilganger."
       },
       "1": {
         "title": "Åpen og fleksibel",
@@ -244,7 +244,7 @@
       },
       "3": {
         "title": "Hold deg oppdatert automatisk",
-        "description": "Få beskjed når en funksjon du stemte på går til «Pågår» eller dukker opp i endringsloggen."
+        "description": "Få beskjed når en funksjon du stemte på går til «Pågår» eller dukker opp i changelogen."
       },
       "4": {
         "title": "Hjelp som svarer",
@@ -258,7 +258,7 @@
         "tags": {
           "0": "REST-API + MCP",
           "1": "Åpen kildekode - AGPL-3.0",
-          "2": "Selvhostet eller sky"
+          "2": "Self-hosted eller cloud"
         }
       },
       "users": {
@@ -278,7 +278,7 @@
     "items": {
       "0": {
         "question": "Hva er Veerify?",
-        "answer": "Veerify er et verktøy med åpen kildekode for produktteam. Det samler offentlige tilbakemeldingstavler med stemmer, et offentlig veikart, en endringslogg og en delt innboks for kunde-e-post, slik at ønsker og kundestøtte er på ett sted."
+        "answer": "Veerify er et verktøy med åpen kildekode for produktteam. Det samler offentlige tilbakemeldingstavler med stemmer, en offentlig roadmap, en changelog og en delt innboks for kunde-e-post, slik at ønsker og kundestøtte er på ett sted."
       },
       "1": {
         "question": "Er Veerify gratis?",
@@ -294,15 +294,15 @@
       },
       "4": {
         "question": "Kan Veerify erstatte Canny?",
-        "answer": "For de fleste team, ja. Veerify har tilbakemeldingstavler, stemmer, offentlig veikart og endringslogg. Du kan importere innlegg, kommentarer, stemmer og endringslogg fra Canny via MCP-serveren, med forhåndsvisning før noe lagres. Canny har flere tredjepartsintegrasjoner."
+        "answer": "For de fleste team, ja. Veerify har tilbakemeldingstavler, stemmer, offentlig roadmap og changelog. Du kan importere innlegg, kommentarer, stemmer og changelog fra Canny via MCP-serveren, med forhåndsvisning før noe lagres. Canny har flere tredjepartsintegrasjoner."
       },
       "5": {
-        "question": "Erstatter Veerify et kundestøttesystem?",
+        "question": "Erstatter Veerify en helpdesk?",
         "answer": "For små team som tar kundestøtte på e-post, ofte ja. Innboksen har tildeling, utsettelse, ferdige svar, SLA-er, autosvar og tilfredshetsundersøkelser. Det finnes ikke live chat eller kunnskapsbase ennå."
       },
       "6": {
         "question": "Kan AI-agenter bruke Veerify?",
-        "answer": "Ja. Veerify har en MCP-server. Koble til Claude Code eller en annen MCP-klient med en personlig API-nøkkel, så kan agenten gjøre det samme som du kan i dashbordet, med dine tilganger og ikke mer."
+        "answer": "Ja. Veerify har en MCP-server. Koble til Claude Code eller en annen MCP-klient med en personlig API-nøkkel, så kan agenten gjøre det samme som du kan i dashboardet, med dine tilganger og ikke mer."
       }
     }
   },
